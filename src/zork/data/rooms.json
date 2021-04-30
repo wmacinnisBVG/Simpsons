@@ -139,6 +139,122 @@
           "adjacentRoom": "Ned's-House-1"
         }
       ]
+    },
+    {
+      "id": "Astore",
+      "name": "Apu's store",
+      "description": "You are in Apu's convenience store, feel free to buy food, water or candy",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "South",
+          "adjacentRoom": "Car"
+        }
+      ]
+    },
+    {
+      "id": "Mall1",
+      "name": "Springfield Mall",
+      "description": "You are in the west wing of Springfield Mall, have fun",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "East",
+          "adjacentRoom": "Mall2"
+        }
+      ]
+    },
+    {
+      "id": "Mall2",
+      "name": "Springfield Mall",
+      "description": "You are in the central part of Springfield Mall",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "Car",
+          
+        },
+        {
+          "isLocked": false,
+          "direction": "East",
+          "adjacentRoom": "Mall3"
+        },
+        {
+          "isLocked": false,
+          "direction": "South",
+          "adjacentRoom": "Path"
+        },
+        {
+          "isLocked": false,
+          "direction": "West",
+          "adjacentRoom": "Mall1"
+        }
+      ]
+    },
+    {
+      "id": "Mall3",
+      "name": "Springfield Mall",
+      "description": "You are in the east wing of Springfield mall",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "West",
+          "adjacentRoom": "Mall2"
+        }
+      ]
+    },
+    {
+     "id": "Office1",
+      "name": "Power Plant",
+      "description": "You are in Smither's Office in Springfield Powerplant Station",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "East",
+          "adjacentRoom": "Office2"
+        }
+      ]
+    },
+    {
+     "id": "Office2",
+      "name": "Power Plant",
+      "description": "You are in the mysterious Springfield Powerplant Station, beware of radiation",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "Storage2"
+        },
+        {
+          "isLocked": false,
+          "direction": "East",
+          "adjacentRoom": "Office3"
+        },
+        {
+          "isLocked": false,
+          "direction": "South",
+          "adjacentRoom": "Car"
+        },
+        {
+          "isLocked": false,
+          "direction": "West",
+          "adjacentRoom": "Office1"
+        }
+      ]
+    },
+     {
+     "id": "Office3",
+      "name": "Power Plant",
+      "description": "You are in Mr.Burns office in Springfield Powerplant Station, becareful with what you say",
+      "exits": [
+        {
+          "isLocked": true,
+          "direction": "West",
+          "adjacentRoom": "Office2",
+          "keyId": "1234"
+        }
+      ]
     }
   ]
 }
