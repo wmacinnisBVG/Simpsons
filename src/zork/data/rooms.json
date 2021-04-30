@@ -172,7 +172,7 @@
         {
           "isLocked": false,
           "direction": "North",
-          "adjacentRoom": "Car",
+          "adjacentRoom": "Car"
           
         },
         {
@@ -255,6 +255,125 @@
           "keyId": "1234"
         }
       ]
+    },
+    {
+      "id": "Path1",
+      "name": "Path",
+      "description": "A path leading somewhere.",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "Mall2"
+        },
+        {
+          "isLocked": false,
+          "direction": "South",
+          "adjacentRoom": "Path2"
+        }
+        ]
+    },
+    {
+      "id": "Path2",
+      "name": "Path",
+      "description": "A path leading somewhere.",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "Path1"
+        },
+        {
+          "isLocked": false,
+          "direction": "West",
+          "adjacentRoom": "Pathw3"
+        },
+        {
+          "isLocked": false,
+          "direction": "South",
+          "adjacentRoom": "PathX"
+        }
+        ]
+    },
+    {
+      "id": "PathX",
+      "name": "Path",
+      "description": "A dead end.",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "Path2"
+        }
+        ]
+    },
+    {
+      "id": "Path3",
+      "name": "Path",
+      "description": "A path leading somewhere.",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "East",
+          "adjacentRoom": "Path2"
+        },
+        {
+          "isLocked": false,
+          "direction": "West",
+          "adjacentRoom": "Path4"
+        }
+        ]
+    },
+    {
+      "id": "Path4",
+      "name": "Path",
+      "description": "A path leading somewhere.",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "East",
+          "adjacentRoom": "Path3"
+        },
+        {
+          "isLocked": false,
+          "direction": "West",
+          "adjacentRoom": "Path5"
+        }
+        ]
+    },
+    {
+      "id": "Path5",
+      "name": "Path",
+      "description": "A path leading somewhere.",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "East",
+          "adjacentRoom": "Path4"
+        },
+        {
+          "isLocked": false,
+          "direction": "West",
+          "adjacentRoom": "Path6"
+        }
+        ]
+    },
+    {
+      "id": "Path6",
+      "name": "Path",
+      "description": "A path leading somewhere.",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "East",
+          "adjacentRoom": "Path5"
+        },
+        {
+          "isLocked": false,
+          "direction": "West",
+          "adjacentRoom": "PoliceStation"
+        }
+        ]
     }
   ]
 }
