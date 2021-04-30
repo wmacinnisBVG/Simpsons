@@ -1,72 +1,142 @@
 {
   "rooms": [
     {
-      "id": "Hallway",
-      "name": "Hallway",
-      "description": "You are in a long hallway. There are family pictures on all of the walls.",
+      "id": "Main-House-Lobby",
+      "name": "Entryway",
+      "description": "You are in the main entryway into the house.",
       "exits": [
         {
           "isLocked": false,
           "direction": "North",
-          "adjacentRoom": "Bedroom"
+          "adjacentRoom": "Kitchen"
         },
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "East",
-          "adjacentRoom": "Bathroom",
-          "keyId": "1234"
-        }
-      ]
-    },
-    {
-      "id": "Bedroom",
-      "name": "Bedroom",
-      "description": "You are in a large bedroom",
-      "exits": [
+          "adjacentRoom": "Dining Room"
+        },
         {
           "isLocked": false,
           "direction": "South",
-          "adjacentRoom": "Hallway"
+          "adjacentRoom": "Outside"
         },
         {
           "isLocked": false,
-          "direction": "SouthEast",
-          "adjacentRoom": "Bathroom"
+          "direction": "West",
+          "adjacentRoom": "Living Room"
+        }
+        
+        ]
+    },
+    {
+      "id": "Main-House-Kitchen",
+      "name": "Entryway",
+      "description": "The kitchen of the Simpsons house.",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "Backyard"
         },
+        {
+          "isLocked": false,
+          "direction": "South",
+          "adjacentRoom": "Entryway"
+        },
+        {
+          "isLocked": false,
+          "direction": "West",
+          "adjacentRoom": "TV Room"
+        }
+        ]
+    },
+    {
+      "id": "Main-House-Living-Room",
+      "name": "Living Room",
+      "description": "Livingroom of the Simpsons house.",
+      "exits":[
         {
           "isLocked": false,
           "direction": "East",
-          "adjacentRoom": "Closet"
+          "adjacentRoom": "Entryway"
         }
       ]
     },
     {
-      "id": "Bathroom",
-      "name": "Bathroom",
-      "description": "You are in a blue bathroom",
-      "exits": [
+      "id": "Main-House-Dining-Room",
+      "name": "Dining Room",
+      "description": "The Simpsons dining room.",
+      "exits":[
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "West",
-          "adjacentRoom": "Hallway",
-          "keyId": "1234"
+          "adjacentRoom": "Entryway"
+        }
+      ]
+    },
+    {
+      "id": "Main-House-TV-Room",
+      "name": "TV Room",
+      "description": "The Simpsons TV room.",
+      "exits":[
+        {
+          "isLocked": false,
+          "direction": "East",
+          "adjacentRoom": "Kitchen"
+        }
+        
+      ]
+    },
+    {
+      "id": "Front-Lawn",
+      "name": "Front Lawn",
+      "description": "The front lawn of the Simpsons house.",
+      "exits":[
+        {
+          "isLocked": false,
+          "direction": "East",
+          "adjacentRoom": "Car"
         },
         {
           "isLocked": false,
-          "direction": "NorthWest",
-          "adjacentRoom": "Bedroom"
+          "direction": "South",
+          "adjacentRoom": "Ned's House"
         }
       ]
     },
     {
-      "id": "Closet",
-      "name": "Closet",
-      "description": "You are in the closet. It is dark.",
-      "exits": [
+      "id": "Ned's-House-2",
+      "name": "Ned's Main Room",
+      "description": "The main room inside Ned's house.",
+      "exits":[
+        {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "Front-Lawn"
+        }
+      ]
+    },
+    {
+      "id": "Ned's-House-1",
+      "name": "Ned's Side Room",
+      "description": "The side room inside Ned's house.",
+      "exits":[
+        {
+          "isLocked": false,
+          "direction": "East",
+          "adjacentRoom": "Ned's-House-2"
+        }
+      ]
+    },
+    {
+      "id": "Ned's-House-3",
+      "name": "Ned's Other Side Room",
+      "description": "The other side room inside Ned's house.",
+      "exits":[
         {
           "isLocked": false,
           "direction": "West",
-          "adjacentRoom": "Bedroom"
+          "adjacentRoom": "Ned's-House-1"
         }
       ]
     }
