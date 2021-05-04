@@ -22,7 +22,7 @@ public class Game {
   public Game() {
     try {
       initRooms("src\\zork\\data\\rooms.json");
-      currentRoom = roomMap.get("Mall1");
+      currentRoom = roomMap.get("Main-House-Lobby");
     } catch (Exception e) {
       e.printStackTrace();
     }

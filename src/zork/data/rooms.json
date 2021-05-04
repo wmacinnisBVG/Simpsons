@@ -93,9 +93,10 @@
       "description": "The front lawn of the Simpsons house.",
       "exits":[
         {
-          "isLocked": false,
+          "isLocked": true,
           "direction": "East",
-          "adjacentRoom": "Car"
+          "adjacentRoom": "Car",
+          "keyId":"1234"
         },
         {
           "isLocked": false,
@@ -418,6 +419,33 @@
           "isLocked": false,
           "direction": "West",
           "adjacentRoom": "PoliceStation"
+        }
+        ]
+    },
+    {
+      "id": "Car",
+      "name": "Car",
+      "description": "You are in Homer's car, You can drive anywhere",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "Home",
+          "adjacentRoom": "Front-Lawn"
+        },
+        {
+          "isLocked": false,
+          "direction": "PowerPlant",
+          "adjacentRoom": "Office2"
+        },
+        {
+          "isLocked": false,
+          "direction": "Store",
+          "adjacentRoom": "Astore"
+        },
+        {
+          "isLocked": false,
+          "direction": "Mall",
+          "adjacentRoom": "Mall2"
         }
         ]
     }
