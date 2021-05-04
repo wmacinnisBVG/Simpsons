@@ -257,6 +257,52 @@
       ]
     },
     {
+      "id": "Storage1",
+       "name": "Power Plant",
+       "description": "You are in a dark storage room, you are surrounded by shelves and odd items",
+       "exits": [
+         {
+           "isLocked": false,
+           "direction": "East",
+           "adjacentRoom": "Storage2"
+         }
+       ]
+     },
+     {
+      "id": "Storage2",
+       "name": "Power Plant",
+       "description": "You are in a dark storage room, you are surrounded by shelves and odd items",
+       "exits": [
+         {
+           "isLocked": false,
+           "direction": "East",
+           "adjacentRoom": "Storage3"
+         },
+         {
+          "isLocked": false,
+          "direction": "West",
+          "adjacentRoom": "Storage1"
+        },
+        {
+          "isLocked": false,
+          "direction": "South",
+          "adjacentRoom": "Office2"
+        }
+       ]
+     },
+     {
+      "id": "Storage3",
+       "name": "Power Plant",
+       "description": "You are in a dark storage room, you are surrounded by shelves and odd items",
+       "exits": [
+         {
+           "isLocked": false,
+           "direction": "West",
+           "adjacentRoom": "Storage2"
+         }
+       ]
+     },
+    {
       "id": "Path1",
       "name": "Path",
       "description": "A path leading somewhere.",
