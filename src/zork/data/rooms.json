@@ -8,45 +8,45 @@
         {
           "isLocked": false,
           "direction": "North",
-          "adjacentRoom": "Kitchen"
+          "adjacentRoom": "Main-House-Kitchen"
         },
         {
           "isLocked": false,
           "direction": "East",
-          "adjacentRoom": "Dining Room"
+          "adjacentRoom": "Main-House-Dining-Room"
         },
         {
           "isLocked": false,
           "direction": "South",
-          "adjacentRoom": "Outside"
+          "adjacentRoom": "Front-Lawn"
         },
         {
           "isLocked": false,
           "direction": "West",
-          "adjacentRoom": "Living Room"
+          "adjacentRoom": "Main-House-Living-Room"
         }
         
         ]
     },
     {
       "id": "Main-House-Kitchen",
-      "name": "Entryway",
+      "name": "Kitchen",
       "description": "The kitchen of the Simpsons house.",
       "exits": [
         {
           "isLocked": false,
           "direction": "North",
-          "adjacentRoom": "Backyard"
+          "adjacentRoom": "Main-House-Backyard"
         },
         {
           "isLocked": false,
           "direction": "South",
-          "adjacentRoom": "Entryway"
+          "adjacentRoom": "Main-House-Lobby"
         },
         {
           "isLocked": false,
           "direction": "West",
-          "adjacentRoom": "TV Room"
+          "adjacentRoom": "Main-House-TV-Room"
         }
         ]
     },
@@ -58,7 +58,7 @@
         {
           "isLocked": false,
           "direction": "East",
-          "adjacentRoom": "Entryway"
+          "adjacentRoom": "Main-House-Lobby"
         }
       ]
     },
@@ -70,7 +70,7 @@
         {
           "isLocked": false,
           "direction": "West",
-          "adjacentRoom": "Entryway"
+          "adjacentRoom": "Main-House-Lobby"
         }
       ]
     },
@@ -82,7 +82,7 @@
         {
           "isLocked": false,
           "direction": "East",
-          "adjacentRoom": "Kitchen"
+          "adjacentRoom": "Main-House-Kitchen"
         }
         
       ]
@@ -100,7 +100,7 @@
         {
           "isLocked": false,
           "direction": "South",
-          "adjacentRoom": "Ned's House"
+          "adjacentRoom": "Ned's-House-2"
         }
       ]
     },
@@ -183,7 +183,7 @@
         {
           "isLocked": false,
           "direction": "South",
-          "adjacentRoom": "Path"
+          "adjacentRoom": "Path1"
         },
         {
           "isLocked": false,
