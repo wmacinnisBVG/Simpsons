@@ -22,7 +22,7 @@ public class Game {
   public Game() {
     try {
       initRooms("src\\zork\\data\\rooms.json");
-      currentRoom = roomMap.get("Bedroom");
+      currentRoom = roomMap.get("Mall1");
     } catch (Exception e) {
       e.printStackTrace();
     }
@@ -86,8 +86,8 @@ public class Game {
    */
   private void printWelcome() {
     System.out.println();
-    System.out.println("Welcome to Zork!");
-    System.out.println("Zork is a new, incredibly boring adventure game.");
+    System.out.println("Welcome to Simpsons!");
+    System.out.println("Simpsons is a new, incredibly fun adventure game.");
     System.out.println("Type 'help' if you need help.");
     System.out.println();
     System.out.println(currentRoom.longDescription());
