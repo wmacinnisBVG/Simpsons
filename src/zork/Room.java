@@ -7,6 +7,7 @@ public class Room {
   private String roomName;
   private String description;
   private ArrayList<Exit> exits;
+  private ArrayList<Item> items;
 
   public ArrayList<Exit> getExits() {
     return exits;
@@ -16,6 +17,12 @@ public class Room {
     this.exits = exits;
   }
 
+  public ArrayList<Item> getItems() {
+    return items;
+  }
+  public void setItems(ArrayList<Item> exists){
+    this.items = items; 
+  }
   /**
    * Create a room described "description". Initially, it has no exits.
    * "description" is something like "a kitchen" or "an open court yard".
@@ -23,12 +30,14 @@ public class Room {
   public Room(String description) {
     this.description = description;
     exits = new ArrayList<Exit>();
+    items = new ArrayList<Item>();
   }
 
   public Room() {
     roomName = "DEFAULT ROOM";
     description = "DEFAULT DESCRIPTION";
     exits = new ArrayList<Exit>();
+    items = new ArrayList<Item>();
   }
 
   public void addExit(Exit exit) throws Exception {
@@ -49,7 +58,7 @@ public class Room {
    */
   public String longDescription() {
 
-    return "Room: " + roomName + "\n\n" + description + "\n" + exitString();
+    return "Room: " + roomName + "\n\n" + description + "\n" + exitString() + "\n" + itemString();
   }
 
   /**
@@ -65,6 +74,18 @@ public class Room {
     return returnString;
   }
 
+  /**
+   * Return a description of the items in the current room. 
+   * 
+   * @return
+   */
+  private String itemString(){
+      String returnString = "Items: ";
+      for(Item item : items){
+        returnString += item.getName() + "";
+      }
+      return returnString;
+  }
   /**
    * Return the room that is reached if we go from this room in direction
    * "direction". If there is no room in that direction, return null.
