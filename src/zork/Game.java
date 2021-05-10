@@ -23,6 +23,7 @@ public class Game {
     try {
       initRooms("src\\zork\\data\\rooms.json");
       currentRoom = roomMap.get("Main-House-Lobby");
+      initItems("src\\zork\\data\\items.json");
     } catch (Exception e) {
       e.printStackTrace();
     }
@@ -60,7 +61,29 @@ public class Game {
       roomMap.put(roomId, room);
     }
   }
+  /**
+   * Takes items.json file and brings all the items into the game
+   */
+  private void initItems(String fileName) throws Exception {
+    Path path = Path.of(fileName);
+    String jsonString = Files.readString(path);
+    JSONParser parser = new JSONParser();
+    JSONObject json = (JSONObject) parser.parse(jsonString);
 
+    JSONArray jsonItems = (JSONArray) json.get("items");
+
+    for (Object roomObj : jsonItems) {
+      Item item = new Item();
+      String itemName = (String) ((JSONObject) roomObj).get("name");
+      item.setName(itemName);
+      int itemWeight = (int) ((JSONObject) roomObj).get("weight");
+      item.setWeight(itemWeight);
+      boolean itemIsOpenable = (boolean) ((JSONObject) roomObj).get("isOpenable");
+      item.setOpen(itemIsOpenable);
+      String itemRoom = (String) ((JSONObject) roomObj).get("room");
+      item.setRoom(itemRoom);
+    }
+  }
   /**
    * Main play routine. Loops until end of play.
    */

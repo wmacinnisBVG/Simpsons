@@ -82,7 +82,9 @@ public class Room {
   private String itemString(){
       String returnString = "Items: ";
       for(Item item : items){
-        returnString += item.getName() + "";
+        if(item.getRoom().equals(roomName)){
+          returnString += item.getName() + "";
+        }
       }
       return returnString;
   }

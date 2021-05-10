@@ -1,8 +1,10 @@
 {
     "items": [
       {
-        
-    
-  }
+      "name": "Car Keys",
+      "weight": 2,
+      "isOpenable": false,
+      "room": "Dining Room" 
+      }
 ]
 }
