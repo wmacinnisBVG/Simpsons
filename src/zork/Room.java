@@ -2,6 +2,7 @@ package zork;
 
 import java.util.ArrayList;
 
+
 public class Room {
 
   private String roomName;
@@ -91,10 +92,11 @@ public class Room {
    */
   private String itemString(){
       String returnString = "Items: ";
+      System.out.println(items);
       for(Item item : items){
-        if(item.getRoom().equals(roomName)){
+       // if(item.getRoom().equals(roomName)){
           returnString += item.getName() + "";
-        }
+        //}
       }
       return returnString;
   }
@@ -143,5 +145,9 @@ public class Room {
 
   public void setDescription(String description) {
     this.description = description;
+  }
+
+  public void addItem(Item item) {
+    items.add(item);
   }
 }

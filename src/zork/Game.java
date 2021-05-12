@@ -16,6 +16,7 @@ public class Game {
   private Parser parser;
   private Room currentRoom;
 
+  public ArrayList<Item> gameItems = new ArrayList<Item>();
   /**
    * Create the game and initialise its internal map.
    */
@@ -77,13 +78,16 @@ public class Game {
       Item item = new Item();
       String itemName = (String) ((JSONObject) roomObj).get("name");
       item.setName(itemName);
-      int itemWeight = (int) ((JSONObject) roomObj).get("weight");
+      long itemWeight = (Long) ((JSONObject) roomObj).get("weight");
       item.setWeight(itemWeight);
       boolean itemIsOpenable = (boolean) ((JSONObject) roomObj).get("isOpenable");
       item.setOpen(itemIsOpenable);
-      String itemRoom = (String) ((JSONObject) roomObj).get("room");
-      item.setRoom(itemRoom);
+      String roomId = (String) ((JSONObject) roomObj).get("room");
+      roomMap.get(roomId).addItem(item);
+      //gameItems.add(item); 
     }
+    
+
   }
   private void initCharacters(String fileName) throws Exception {
     Path path = Path.of(fileName);
