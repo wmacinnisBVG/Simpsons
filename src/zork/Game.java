@@ -105,6 +105,7 @@ public class Game {
       character.setLocation(characterLocation);
       String characterDialogue = (String) ((JSONObject) roomObj).get("dialogue");
       character.setDialogue(characterDialogue);
+      roomMap.get(characterLocation).addNPC(character);
       
     }
   }
@@ -163,6 +164,8 @@ public class Game {
         return true; // signal that we want to quit
     } else if (commandWord.equals("eat")) {
       System.out.println("Do you really think you should be eating at a time like this?");
+    }else if(commandWord.equals("talk to")){
+      //here
     }
     return false;
   }

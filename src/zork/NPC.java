@@ -1,4 +1,4 @@
-import zork.Room;
+package zork;
 
 public class NPC {
 

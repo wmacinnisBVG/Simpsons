@@ -49,6 +49,7 @@ public class Room {
     description = "DEFAULT DESCRIPTION";
     exits = new ArrayList<Exit>();
     items = new ArrayList<Item>();
+    NPCS = new ArrayList<NPC>();
   }
 
   public void addExit(Exit exit) throws Exception {
@@ -69,7 +70,7 @@ public class Room {
    */
   public String longDescription() {
 
-    return "Room: " + roomName + "\n\n" + description + "\n" + exitString() + "\n" + itemString();
+    return "Room: " + roomName + "\n\n" + description + "\n" + exitString() + "\n" + itemString() + "\n" + NPCString();
   }
 
   /**
@@ -100,6 +101,17 @@ public class Room {
       }
       return returnString;
   }
+
+  private String NPCString() {
+    String returnString = "Characters: ";
+    System.out.println(NPCS);
+    for (NPC npc : NPCS) {
+      returnString += npc.getName() + " ";
+    }
+
+    return returnString;
+  }
+
   /**
    * Return the room that is reached if we go from this room in direction
    * "direction". If there is no room in that direction, return null.
@@ -149,5 +161,9 @@ public class Room {
 
   public void addItem(Item item) {
     items.add(item);
+  }
+
+  public void addNPC (NPC npc) {
+    NPCS.add(npc);
   }
 }
