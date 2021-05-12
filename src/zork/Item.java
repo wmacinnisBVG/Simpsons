@@ -3,33 +3,34 @@ package zork;
 import java.util.ArrayList;
 
 public class Item extends OpenableObject {
-  private int weight;
+  private long weight;
   private String name;
   private boolean isOpenable;
-  private String room;
-  public Item(int weight, String room, String name, boolean isOpenable) {
+ 
+
+  public Item(int weight, String name, boolean isOpenable) {
     this.weight = weight;
-    this.room = room; 
+    
     this.name = name;
     this.isOpenable = isOpenable;
   }
   public Item() {
     name = "DEFAULT ITEM";
-    room = "DEFAULT ROOM";
     weight = 0;
     isOpenable = false;
   }
   public void open() {
     if (!isOpenable)
       System.out.println("The " + name + " cannot be opened.");
-
+    
   }
+ 
 
-  public int getWeight() {
+  public long getWeight() {
     return weight;
   }
 
-  public void setWeight(int weight) {
+  public void setWeight(long weight) {
     this.weight = weight;
   }
 
@@ -37,9 +38,7 @@ public class Item extends OpenableObject {
     return name;
   }
 
-  public String getRoom(){
-    return room;
-  }
+
 
   public void setName(String name) {
     this.name = name;
@@ -53,7 +52,5 @@ public class Item extends OpenableObject {
     this.isOpenable = isOpenable;
   }
 
-  public void setRoom(String room){
-    this.room = room;
-  }
+
 }
