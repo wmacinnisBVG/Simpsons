@@ -26,7 +26,8 @@ public class Game {
     try {
       initRooms("Simpsons\\src\\zork\\data\\rooms.json");
       currentRoom = roomMap.get("Main-House-Lobby");
-      initItems("Simpsons\\src\\zork\\data\\items.json");
+      initItems("src\\zork\\data\\items.json");
+      initCharacters("src\\zork\\data\\characters.json");
     } catch (Exception e) {
       e.printStackTrace();
     }
@@ -90,6 +91,27 @@ public class Game {
     
 
   }
+  private void initCharacters(String fileName) throws Exception {
+    Path path = Path.of(fileName);
+    String jsonString = Files.readString(path);
+    JSONParser parser = new JSONParser();
+    JSONObject json = (JSONObject) parser.parse(jsonString);
+
+    JSONArray jsonCharacters = (JSONArray) json.get("characters");
+
+    for (Object roomObj : jsonCharacters) {
+       NPC character = new NPC();
+      String characterName = (String) ((JSONObject) roomObj).get("name");
+      character.setName(characterName);
+      String characterLocation = (String) ((JSONObject) roomObj).get("location");
+      character.setLocation(characterLocation);
+      String characterDialogue = (String) ((JSONObject) roomObj).get("dialogue");
+      character.setDialogue(characterDialogue);
+      roomMap.get(characterLocation).addNPC(character);
+      
+    }
+  }
+
   /**
    * Main play routine. Loops until end of play.
    */
@@ -148,6 +170,8 @@ public class Game {
         currentInventory.addItem(currentRoom.takeForInventory()); //this pickup is kinda inefficient and theres probably an easier way to do it but it works well enough
     } else if(commandWord.equals("inventory")) {
       currentInventory.listInventory();
+    }else if(commandWord.equals("talk to")){
+      //here
     }
     return false;
   }
