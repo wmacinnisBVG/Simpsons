@@ -8,6 +8,7 @@ public class Room {
   private String description;
   private ArrayList<Exit> exits;
   private ArrayList<Item> items;
+  private ArrayList<NPC> NPCS;
 
   public ArrayList<Exit> getExits() {
     return exits;
@@ -23,6 +24,12 @@ public class Room {
   public void setItems(ArrayList<Item> exists){
     this.items = items; 
   }
+  public ArrayList<NPC> getNPC() {
+    return NPCS;
+  }
+  public void setNPC(ArrayList<NPC> NPCS){
+    this.NPCS = NPCS;
+  }
   /**
    * Create a room described "description". Initially, it has no exits.
    * "description" is something like "a kitchen" or "an open court yard".
@@ -31,6 +38,9 @@ public class Room {
     this.description = description;
     exits = new ArrayList<Exit>();
     items = new ArrayList<Item>();
+    NPCS = new ArrayList<NPC>();
+    
+
   }
 
   public Room() {

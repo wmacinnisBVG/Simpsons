@@ -1,0 +1,17 @@
+{
+    "characters": [
+      {
+        "id": "Homer",
+        "name": "Homer",
+        "location": "Main-House-Lobby", 
+        "dialogue": "blah blah"
+      },
+      {
+        "id": "Ned",
+        "name": "Ned",
+        "location": "Ned's-House-2",
+        "dialogue": "hi im ned"
+      }
+      
+    ]
+  }
