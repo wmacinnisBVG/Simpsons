@@ -9,6 +9,7 @@ public class Room {
   private String description;
   private ArrayList<Exit> exits;
   private ArrayList<Item> items;
+  private ArrayList<Item> temporary = new ArrayList<Item>(69);
 
   public ArrayList<Exit> getExits() {
     return exits;
@@ -70,6 +71,13 @@ public class Room {
     return returnString;
   }
 
+  public Item takeForInventory(){ //This is also just temporary and will be changed into a for loop later (probably)
+    temporary.clear();
+    temporary.add(items.get(0));
+    items.remove(0);
+    return temporary.get(0);
+  }
+
   /**
    * Return a description of the items in the current room. 
    * 
@@ -85,6 +93,8 @@ public class Room {
       }
       return returnString;
   }
+
+
   /**
    * Return the room that is reached if we go from this room in direction
    * "direction". If there is no room in that direction, return null.

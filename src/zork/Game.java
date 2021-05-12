@@ -15,6 +15,8 @@ public class Game {
 
   private Parser parser;
   private Room currentRoom;
+  private Inventory currentInventory = new Inventory(10);
+  
 
   public ArrayList<Item> gameItems = new ArrayList<Item>();
   /**
@@ -22,9 +24,9 @@ public class Game {
    */
   public Game() {
     try {
-      initRooms("src\\zork\\data\\rooms.json");
+      initRooms("Simpsons\\src\\zork\\data\\rooms.json");
       currentRoom = roomMap.get("Main-House-Lobby");
-      initItems("src\\zork\\data\\items.json");
+      initItems("Simpsons\\src\\zork\\data\\items.json");
     } catch (Exception e) {
       e.printStackTrace();
     }
@@ -142,6 +144,10 @@ public class Game {
         return true; // signal that we want to quit
     } else if (commandWord.equals("eat")) {
       System.out.println("Do you really think you should be eating at a time like this?");
+    } else if (commandWord.equals("pickup")) {
+        currentInventory.addItem(currentRoom.takeForInventory()); //this pickup is kinda inefficient and theres probably an easier way to do it but it works well enough
+    } else if(commandWord.equals("inventory")) {
+      currentInventory.listInventory();
     }
     return false;
   }
