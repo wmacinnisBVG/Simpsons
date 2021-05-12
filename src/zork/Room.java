@@ -9,7 +9,8 @@ public class Room {
   private String description;
   private ArrayList<Exit> exits;
   private ArrayList<Item> items;
-
+  private ArrayList<NPC> NPCS;
+  private ArrayList<Item> temporary;
   public ArrayList<Exit> getExits() {
     return exits;
   }

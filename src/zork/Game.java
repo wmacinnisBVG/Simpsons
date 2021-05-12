@@ -26,8 +26,8 @@ public class Game {
     try {
       initRooms("Simpsons\\src\\zork\\data\\rooms.json");
       currentRoom = roomMap.get("Main-House-Lobby");
-      initItems("src\\zork\\data\\items.json");
-      initCharacters("src\\zork\\data\\characters.json");
+      initItems("Simpsons\\src\\zork\\data\\items.json");
+      initCharacters("Simpsons\\src\\zork\\data\\characters.json");
     } catch (Exception e) {
       e.printStackTrace();
     }
