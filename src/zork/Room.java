@@ -69,8 +69,13 @@ public class Room {
    * Exits: north west
    */
   public String longDescription() {
+    if(roomName.equals("Living Room")){
+      return "Room: " + roomName + "\n\n" + description + "\n" + exitString() + "\n" + itemString() + "\n" + NPCString() + "\n You see Homer dead on the floor. The wound is still fresh, the killer must be close by.";
+    } else {
+      return "Room: " + roomName + "\n\n" + description + "\n" + exitString() + "\n" + itemString() + "\n" + NPCString();
+    }
+    
 
-    return "Room: " + roomName + "\n\n" + description + "\n" + exitString() + "\n" + itemString() + "\n" + NPCString();
   }
 
   /**
@@ -100,7 +105,6 @@ public class Room {
    */
   private String itemString(){
       String returnString = "Items: ";
-      System.out.println(items);
       for(Item item : items){
        // if(item.getRoom().equals(roomName)){
           returnString += item.getName() + "";
