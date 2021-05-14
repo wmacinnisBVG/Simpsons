@@ -24,10 +24,10 @@ public class Game {
    */
   public Game() {
     try {
-      initRooms("Simpsons\\src\\zork\\data\\rooms.json");
-      currentRoom = roomMap.get("Main-House-Lobby");
-      initItems("Simpsons\\src\\zork\\data\\items.json");
-      initCharacters("Simpsons\\src\\zork\\data\\characters.json");
+      initRooms("src\\zork\\data\\rooms.json");
+      currentRoom = roomMap.get("Main-House-TV-Room");
+      initItems("src\\zork\\data\\items.json");
+      initCharacters("src\\zork\\data\\characters.json");
     } catch (Exception e) {
       e.printStackTrace();
     }
@@ -136,12 +136,14 @@ public class Game {
    * Print out the opening message for the player.
    */
   private void printWelcome() {
+    System.out.println("The Simpsons");
     System.out.println();
-    System.out.println("Welcome to Simpsons!");
-    System.out.println("Simpsons is a new, incredibly fun adventure game.");
+    System.out.println("Welcome to Springfield!");
+    System.out.println("Simpsons is a new, incredibly fun murder mystery game.");
     System.out.println("Type 'help' if you need help.");
     System.out.println();
     System.out.println(currentRoom.longDescription());
+    System.out.println("Hey Bart, you are in the Simpson's house, start exploring. ");
   }
 
   /**
@@ -183,8 +185,8 @@ public class Game {
    * and a list of the command words.
    */
   private void printHelp() {
-    System.out.println("You are lost. You are alone. You wander");
-    System.out.println("around at Monash Uni, Peninsula Campus.");
+    System.out.println("You are trying to find Homer's killer.");
+    System.out.println("Around Springfield.");
     System.out.println();
     System.out.println("Your command words are:");
     parser.showCommands();
