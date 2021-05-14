@@ -14,13 +14,20 @@ public class Parser {
   public Command getCommand() throws java.io.IOException {
     String inputLine = "";
     String[] words;
+    
 
     System.out.print("> "); // print prompt
 
     inputLine = in.nextLine();
-
+    int space = inputLine.indexOf(" ");
+    int space2 = inputLine.indexOf(" ", space+1);
+    if(space2 > 0){
+       words = new String[2];
+      words[0] = inputLine.substring(0, space2);
+      words[1] = inputLine.substring(space2);
+    }else
     words = inputLine.split(" ");
-
+    
     String word1 = words[0];
     String word2 = null;
     if (words.length > 1)

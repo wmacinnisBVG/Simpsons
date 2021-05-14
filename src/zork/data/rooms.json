@@ -427,11 +427,7 @@
       "name": "Car",
       "description": "You are in Homer's car, You can drive anywhere",
       "exits": [
-        {
-          "isLocked": false,
-          "direction": "Home",
-          "adjacentRoom": "Front-Lawn"
-        },
+        
         {
           "isLocked": false,
           "direction": "PowerPlant",

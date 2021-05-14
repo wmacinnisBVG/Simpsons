@@ -166,17 +166,16 @@ public class Game {
         return true; // signal that we want to quit
     } else if (commandWord.equals("eat")) {
       System.out.println("Do you really think you should be eating at a time like this?");
-<<<<<<< HEAD
-    } else if(commandWord.equals("pickup")){
-        pickupObject(command);
-=======
     } else if (commandWord.equals("pickup")) {
         currentInventory.addItem(currentRoom.takeForInventory()); //this pickup is kinda inefficient and theres probably an easier way to do it but it works well enough
     } else if(commandWord.equals("inventory")) {
       currentInventory.listInventory();
     }else if(commandWord.equals("talk to")){
-      //here
->>>>>>> b183de9d53c9b259a485f7dd5d6273626fe43165
+      for(NPC npc: currentRoom.getNPC()){
+        System.out.println(npc.talkTo());
+      }
+    }else if(commandWord.equals("drive to")){
+      goRoom(command);
     }
     return false;
   }

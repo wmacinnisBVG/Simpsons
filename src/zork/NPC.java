@@ -55,8 +55,9 @@ public void talk(){
        System.out.println(dialogue);
    }
 */
-   public void giveItem(){
-
+   public String talkTo(){
+       
+    return dialogue; 
    }
 
 }
