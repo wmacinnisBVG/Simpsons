@@ -30,4 +30,8 @@ public class Inventory {
     }
   }
 
+  public void listInventory() {
+    System.out.println(items.get(0).getName()); //This is just the beginning, I will change it into a for loop later unless someone else does it
+  }
+
 }

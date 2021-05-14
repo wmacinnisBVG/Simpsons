@@ -9,7 +9,8 @@ public class Room {
   private String description;
   private ArrayList<Exit> exits;
   private ArrayList<Item> items;
-
+  private ArrayList<NPC> NPCS;
+  private ArrayList<Item> temporary;
   public ArrayList<Exit> getExits() {
     return exits;
   }
@@ -18,7 +19,18 @@ public class Room {
     this.exits = exits;
   }
 
-
+  public ArrayList<Item> getItems() {
+    return items;
+  }
+  public void setItems(ArrayList<Item> exists){
+    this.items = items; 
+  }
+  public ArrayList<NPC> getNPC() {
+    return NPCS;
+  }
+  public void setNPC(ArrayList<NPC> NPCS){
+    this.NPCS = NPCS;
+  }
   /**
    * Create a room described "description". Initially, it has no exits.
    * "description" is something like "a kitchen" or "an open court yard".
@@ -27,6 +39,9 @@ public class Room {
     this.description = description;
     exits = new ArrayList<Exit>();
     items = new ArrayList<Item>();
+    NPCS = new ArrayList<NPC>();
+    
+
   }
 
   public Room() {
@@ -34,6 +49,7 @@ public class Room {
     description = "DEFAULT DESCRIPTION";
     exits = new ArrayList<Exit>();
     items = new ArrayList<Item>();
+    NPCS = new ArrayList<NPC>();
   }
 
   public void addExit(Exit exit) throws Exception {
@@ -54,7 +70,7 @@ public class Room {
    */
   public String longDescription() {
 
-    return "Room: " + roomName + "\n\n" + description + "\n" + exitString() + "\n" + itemString();
+    return "Room: " + roomName + "\n\n" + description + "\n" + exitString() + "\n" + itemString() + "\n" + NPCString();
   }
 
   /**
@@ -68,6 +84,13 @@ public class Room {
     }
 
     return returnString;
+  }
+
+  public Item takeForInventory(){ //This is also just temporary and will be changed into a for loop later (probably)
+    temporary.clear();
+    temporary.add(items.get(0));
+    items.remove(0);
+    return temporary.get(0);
   }
 
   /**
@@ -85,6 +108,17 @@ public class Room {
       }
       return returnString;
   }
+
+  private String NPCString() {
+    String returnString = "Characters: ";
+    System.out.println(NPCS);
+    for (NPC npc : NPCS) {
+      returnString += npc.getName() + " ";
+    }
+
+    return returnString;
+  }
+
   /**
    * Return the room that is reached if we go from this room in direction
    * "direction". If there is no room in that direction, return null.
@@ -134,5 +168,9 @@ public class Room {
 
   public void addItem(Item item) {
     items.add(item);
+  }
+
+  public void addNPC (NPC npc) {
+    NPCS.add(npc);
   }
 }

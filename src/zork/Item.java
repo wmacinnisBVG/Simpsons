@@ -1,7 +1,5 @@
 package zork;
 
-import java.util.ArrayList;
-
 public class Item extends OpenableObject {
   private long weight;
   private String name;

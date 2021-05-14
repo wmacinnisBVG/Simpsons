@@ -15,6 +15,8 @@ public class Game {
 
   private Parser parser;
   private Room currentRoom;
+  private Inventory currentInventory = new Inventory(10);
+  
 
   public ArrayList<Item> gameItems = new ArrayList<Item>();
   /**
@@ -22,9 +24,10 @@ public class Game {
    */
   public Game() {
     try {
-      initRooms("src\\zork\\data\\rooms.json");
+      initRooms("Simpsons\\src\\zork\\data\\rooms.json");
       currentRoom = roomMap.get("Main-House-Lobby");
-      initItems("src\\zork\\data\\items.json");
+      initItems("Simpsons\\src\\zork\\data\\items.json");
+      initCharacters("Simpsons\\src\\zork\\data\\characters.json");
     } catch (Exception e) {
       e.printStackTrace();
     }
@@ -88,6 +91,27 @@ public class Game {
     
 
   }
+  private void initCharacters(String fileName) throws Exception {
+    Path path = Path.of(fileName);
+    String jsonString = Files.readString(path);
+    JSONParser parser = new JSONParser();
+    JSONObject json = (JSONObject) parser.parse(jsonString);
+
+    JSONArray jsonCharacters = (JSONArray) json.get("characters");
+
+    for (Object roomObj : jsonCharacters) {
+       NPC character = new NPC();
+      String characterName = (String) ((JSONObject) roomObj).get("name");
+      character.setName(characterName);
+      String characterLocation = (String) ((JSONObject) roomObj).get("location");
+      character.setLocation(characterLocation);
+      String characterDialogue = (String) ((JSONObject) roomObj).get("dialogue");
+      character.setDialogue(characterDialogue);
+      roomMap.get(characterLocation).addNPC(character);
+      
+    }
+  }
+
   /**
    * Main play routine. Loops until end of play.
    */
@@ -142,8 +166,17 @@ public class Game {
         return true; // signal that we want to quit
     } else if (commandWord.equals("eat")) {
       System.out.println("Do you really think you should be eating at a time like this?");
+<<<<<<< HEAD
     } else if(commandWord.equals("pickup")){
         pickupObject(command);
+=======
+    } else if (commandWord.equals("pickup")) {
+        currentInventory.addItem(currentRoom.takeForInventory()); //this pickup is kinda inefficient and theres probably an easier way to do it but it works well enough
+    } else if(commandWord.equals("inventory")) {
+      currentInventory.listInventory();
+    }else if(commandWord.equals("talk to")){
+      //here
+>>>>>>> b183de9d53c9b259a485f7dd5d6273626fe43165
     }
     return false;
   }
