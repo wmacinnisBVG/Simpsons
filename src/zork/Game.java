@@ -142,6 +142,8 @@ public class Game {
         return true; // signal that we want to quit
     } else if (commandWord.equals("eat")) {
       System.out.println("Do you really think you should be eating at a time like this?");
+    } else if(commandWord.equals("pickup")){
+        pickupObject(command);
     }
     return false;
   }
@@ -182,5 +184,9 @@ public class Game {
       currentRoom = nextRoom;
       System.out.println(currentRoom.longDescription());
     }
+  }
+
+  private void pickupObject(Command command){
+
   }
 }
