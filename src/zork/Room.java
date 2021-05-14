@@ -10,7 +10,7 @@ public class Room {
   private ArrayList<Exit> exits;
   private ArrayList<Item> items;
   private ArrayList<NPC> NPCS;
-  private ArrayList<Item> temporary;
+  private ArrayList<Item> temporary = new ArrayList<Item>(1);
   public ArrayList<Exit> getExits() {
     return exits;
   }
@@ -22,7 +22,7 @@ public class Room {
   public ArrayList<Item> getItems() {
     return items;
   }
-  public void setItems(ArrayList<Item> exists){
+  public void setItems(ArrayList<Item> items){
     this.items = items; 
   }
   public ArrayList<NPC> getNPC() {
@@ -128,9 +128,13 @@ public class Room {
       for (Exit exit : exits) {
 
         if (exit.getDirection().equalsIgnoreCase(direction)) {
-          String adjacentRoom = exit.getAdjacentRoom();
-
-          return Game.roomMap.get(adjacentRoom);
+          if (!exit.isLocked){
+            String adjacentRoom = exit.getAdjacentRoom();
+            return Game.roomMap.get(adjacentRoom);
+          }
+          System.out.println(exit.getKeyId());
+          System.out.println("It's locked so like find some key");
+          return null;
         }
 
       }
@@ -141,6 +145,25 @@ public class Room {
 
     System.out.println(direction + " is not a valid direction.");
     return null;
+  }
+
+  public void unlockRoom(String direction, String id) {
+    try {
+      for (Exit exit : exits) {
+
+        if (exit.getDirection().equalsIgnoreCase(direction)) {
+          if (exit.isLocked){
+            if (exit.keyId.equals(id)){
+              exit.isLocked = false;
+              System.out.println("Door unlocked");
+            }
+          }
+        }
+
+      }
+    } catch (IllegalArgumentException ex) {
+      System.out.println(direction + " is not a valid direction.");
+    }
   }
 
   /*

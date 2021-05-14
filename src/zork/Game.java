@@ -24,10 +24,10 @@ public class Game {
    */
   public Game() {
     try {
-      initRooms("Simpsons\\src\\zork\\data\\rooms.json");
+      initRooms("src\\zork\\data\\rooms.json");
       currentRoom = roomMap.get("Main-House-Lobby");
-      initItems("Simpsons\\src\\zork\\data\\items.json");
-      initCharacters("Simpsons\\src\\zork\\data\\characters.json");
+      initItems("src\\zork\\data\\items.json");
+      initCharacters("src\\zork\\data\\characters.json");
     } catch (Exception e) {
       e.printStackTrace();
     }
@@ -84,6 +84,8 @@ public class Game {
       item.setWeight(itemWeight);
       boolean itemIsOpenable = (boolean) ((JSONObject) roomObj).get("isOpenable");
       item.setOpen(itemIsOpenable);
+      String id = (String) ((JSONObject) roomObj).get("id");
+      item.setId(id);
       String roomId = (String) ((JSONObject) roomObj).get("room");
       roomMap.get(roomId).addItem(item);
       //gameItems.add(item); 
@@ -166,17 +168,15 @@ public class Game {
         return true; // signal that we want to quit
     } else if (commandWord.equals("eat")) {
       System.out.println("Do you really think you should be eating at a time like this?");
-<<<<<<< HEAD
-    } else if(commandWord.equals("pickup")){
-        pickupObject(command);
-=======
     } else if (commandWord.equals("pickup")) {
         currentInventory.addItem(currentRoom.takeForInventory()); //this pickup is kinda inefficient and theres probably an easier way to do it but it works well enough
     } else if(commandWord.equals("inventory")) {
       currentInventory.listInventory();
     }else if(commandWord.equals("talk to")){
       //here
->>>>>>> b183de9d53c9b259a485f7dd5d6273626fe43165
+    }else if(commandWord.equals("unlock")){
+      String direction = command.getSecondWord();
+      currentRoom.unlockRoom(direction, currentInventory.getId());
     }
     return false;
   }
@@ -217,9 +217,5 @@ public class Game {
       currentRoom = nextRoom;
       System.out.println(currentRoom.longDescription());
     }
-  }
-
-  private void pickupObject(Command command){
-
   }
 }

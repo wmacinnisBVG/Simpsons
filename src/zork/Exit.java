@@ -28,6 +28,14 @@ public class Exit extends OpenableObject {
     return direction;
   }
 
+  public boolean isLocked() {
+    return isLocked;
+  }
+
+  public String getKeyId() {
+    return keyId;
+  }
+
   public void setDirection(String direction) {
     this.direction = direction;
   }
