@@ -5,6 +5,18 @@
       "weight": 2,
       "isOpenable": false,
       "room": "Main-House-Dining-Room" 
+      },
+      {
+      "name": "1 Dollar Bill",
+      "weight": 1,
+      "isOpenable": false,
+      "room": "Main-House-Kitchen"
+      },
+      {
+      "name": "Bloody Knife",
+      "weight": 5,
+      "isOpenable": false,
+      "room": "Main-House-Living-Room" 
       }
 ]
 }

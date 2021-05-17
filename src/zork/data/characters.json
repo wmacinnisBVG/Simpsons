@@ -11,6 +11,19 @@
         "name": "Ned",
         "location": "Ned's-House-2",
         "dialogue": "hi im ned"
+      },
+      {
+        "id": "Smithers",
+        "name": "Smithers",
+        "location": "Office1",
+        "dialogue": "Hello"
+
+      },
+      {
+        "id": "Apu",
+        "name": "Apu",
+        "location": "Astore",
+        "dialogue": "you got to buy something"
       }
       
     ]
