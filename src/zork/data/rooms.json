@@ -93,6 +93,11 @@
       "description": "The front lawn of the Simpsons house.",
       "exits":[
         {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "Main-House-Lobby"
+        },
+        {
           "isLocked": true,
           "direction": "East",
           "adjacentRoom": "Car",

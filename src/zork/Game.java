@@ -84,6 +84,8 @@ public class Game {
       item.setWeight(itemWeight);
       boolean itemIsOpenable = (boolean) ((JSONObject) roomObj).get("isOpenable");
       item.setOpen(itemIsOpenable);
+      String id = (String) ((JSONObject) roomObj).get("id");
+      item.setId(id);
       String roomId = (String) ((JSONObject) roomObj).get("room");
       roomMap.get(roomId).addItem(item);
       //gameItems.add(item); 
@@ -178,6 +180,10 @@ public class Game {
       }
     }else if(commandWord.equals("drive to")){
       goRoom(command);
+      //here
+    }else if(commandWord.equals("unlock")){
+      String direction = command.getSecondWord();
+      currentRoom.unlockRoom(direction, currentInventory.getId());
     }
     return false;
   }

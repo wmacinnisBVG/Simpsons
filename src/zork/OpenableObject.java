@@ -1,8 +1,8 @@
 package zork;
 
 public class OpenableObject {
-  private Boolean isLocked;
-  private String keyId;
+  public Boolean isLocked;
+  public String keyId;
   private Boolean isOpen;
 
   public OpenableObject() {

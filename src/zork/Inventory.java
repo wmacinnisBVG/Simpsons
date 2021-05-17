@@ -34,4 +34,8 @@ public class Inventory {
     System.out.println(items.get(0).getName()); //This is just the beginning, I will change it into a for loop later unless someone else does it
   }
 
+  public String getId() {
+    return items.get(0).getId();
+  }
+
 }

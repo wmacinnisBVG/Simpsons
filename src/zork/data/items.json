@@ -1,6 +1,7 @@
 {
     "items": [
       {
+      "id": "1234",
       "name": "Car Keys",
       "weight": 2,
       "isOpenable": false,
