@@ -1,23 +1,53 @@
 {
     "items": [
       {
-      "id": "1234",
+      "id": "carKeys",
       "name": "Car Keys",
       "weight": 2,
       "isOpenable": false,
       "room": "Main-House-Dining-Room" 
       },
       {
+      "id": "dollarBill",
       "name": "1 Dollar Bill",
       "weight": 1,
       "isOpenable": false,
       "room": "Main-House-Kitchen"
       },
       {
+      "id": "bloodyKnife",
       "name": "Bloody Knife",
       "weight": 5,
       "isOpenable": false,
       "room": "Main-House-Living-Room" 
+      },
+      {
+      "id": "tvRemote",
+      "name": "TV Remote",
+      "weight": 7,
+      "isOpenable": false,
+      "room": "Main-House-TV-Room"
+      },
+      {
+      "id": "magazine1",
+      "name": "Magazine",
+      "weight": 1,
+      "isOpenable": false,
+      "room": "Main-House-TV-Room"
+      },
+      {
+      "id": "cup1",
+      "name": "Cup",
+      "weight": 2,
+      "isOpenable": false,
+      "room": "Main-House-TV-Room"
+      },
+      {
+      "id": "receipt1",
+      "name": "Receipt",
+      "weight": 1,
+      "isOpenable": false,
+      "room": "Main-House-TV-Room"  
       }
 ]
 }

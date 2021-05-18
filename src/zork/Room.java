@@ -70,7 +70,7 @@ public class Room {
    */
   public String longDescription() {
     if(roomName.equals("Living Room")){
-      return "Room: " + roomName + "\n\n" + description + "\n" + exitString() + "\n" + itemString() + "\n" + NPCString() + "\n You see Homer dead on the floor. The wound is still fresh, the killer must be close by.";
+      return "Room: " + roomName + "\n\n" + description + "\n" + exitString() + "\n" + itemString() + "\n" + NPCString() + "\n You see Homer lying in a puddle of blood on the floor. The wound is still fresh, the killer must be close by. Talk to Homer to find out what happened.";
     } else {
       return "Room: " + roomName + "\n\n" + description + "\n" + exitString() + "\n" + itemString() + "\n" + NPCString();
     }
@@ -104,18 +104,26 @@ public class Room {
    * @return
    */
   private String itemString(){
-      String returnString = "Items: ";
+    String returnString = "";
+    if (items.isEmpty()) {
+      
+    } else {
+      returnString = "Items: ";
+    }
       for(Item item : items){
-       // if(item.getRoom().equals(roomName)){
-          returnString += item.getName() + "";
-        //}
+          returnString += item.getName() + ", ";
       }
       return returnString;
   }
 
   private String NPCString() {
-    String returnString = "Characters: ";
-    System.out.println(NPCS);
+    String returnString = "";
+    if (NPCS.isEmpty()) {
+      
+    } else {
+      returnString = "Characters: ";
+    }
+    
     for (NPC npc : NPCS) {
       returnString += npc.getName() + " ";
     }

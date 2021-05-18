@@ -145,7 +145,7 @@ public class Game {
     System.out.println("Type 'help' if you need help.");
     System.out.println();
     System.out.println(currentRoom.longDescription());
-    System.out.println("Hey Bart, you are in the Simpson's house, start exploring. ");
+    System.out.println("Hey Bart, you are in the Simpson's house, start exploring. \n You hear a strange noise from the living room. Go through the kitchen and turn west in the entryway.");
   }
 
   /**
