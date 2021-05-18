@@ -171,7 +171,11 @@ public class Game {
     } else if (commandWord.equals("eat")) {
       System.out.println("Do you really think you should be eating at a time like this?");
     } else if (commandWord.equals("pickup")) {
-        currentInventory.addItem(currentRoom.takeForInventory()); //this pickup is kinda inefficient and theres probably an easier way to do it but it works well enough
+      if(currentRoom.itemCheck()){
+        currentInventory.addItem(currentRoom.takeForInventory());
+      }else{
+        System.out.println("There is nothing to pick up.");
+      }
     } else if(commandWord.equals("inventory")) {
       currentInventory.listInventory();
     }else if(commandWord.equals("talk to")){
@@ -183,7 +187,9 @@ public class Game {
       //here
     }else if(commandWord.equals("unlock")){
       String direction = command.getSecondWord();
-      currentRoom.unlockRoom(direction, currentInventory.getId());
+      for(int i = 0; i < currentInventory.getSize(); i++){
+        currentRoom.unlockRoom(direction, currentInventory.getId(i));
+      }
     }
     return false;
   }
@@ -224,9 +230,5 @@ public class Game {
       currentRoom = nextRoom;
       System.out.println(currentRoom.longDescription());
     }
-  }
-
-  private void pickupObject(Command command){
-
   }
 }

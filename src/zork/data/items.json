@@ -8,12 +8,14 @@
       "room": "Main-House-Dining-Room" 
       },
       {
+      "id": "1233",
       "name": "1 Dollar Bill",
       "weight": 1,
       "isOpenable": false,
       "room": "Main-House-Kitchen"
       },
       {
+      "id": "1232",
       "name": "Bloody Knife",
       "weight": 5,
       "isOpenable": false,

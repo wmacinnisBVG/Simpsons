@@ -447,6 +447,11 @@
           "isLocked": false,
           "direction": "Mall",
           "adjacentRoom": "Mall2"
+        },
+        {
+          "isLocked": false,
+          "direction": "Home",
+          "adjacentRoom": "Front-Lawn"
         }
         ]
     }

@@ -21,6 +21,10 @@ public class Inventory {
     return currentWeight;
   }
 
+  public int getSize() {
+    return items.size();
+  }
+
   public boolean addItem(Item item) {
     if (item.getWeight() + currentWeight <= maxWeight)
       return items.add(item);
@@ -31,11 +35,17 @@ public class Inventory {
   }
 
   public void listInventory() {
-    System.out.println(items.get(0).getName()); //This is just the beginning, I will change it into a for loop later unless someone else does it
+    if(items.size() > 0){
+      for(int i = 0; i < items.size(); i++){
+        System.out.println(i+1 + ". " + items.get(i).getName());
+      }
+    }else{
+      System.out.println("You have nothing in your pockets.");
+    }
   }
 
-  public String getId() {
-    return items.get(0).getId();
+  public String getId(int i) {
+    return items.get(i).getId();
   }
 
 }

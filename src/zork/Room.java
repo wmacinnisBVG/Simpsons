@@ -92,10 +92,11 @@ public class Room {
   }
 
   public Item takeForInventory(){ //This is also just temporary and will be changed into a for loop later (probably)
-    temporary.clear();
-    temporary.add(items.get(0));
-    items.remove(0);
-    return temporary.get(0);
+
+      temporary.clear();
+      temporary.add(items.get(0));
+      items.remove(0);
+      return temporary.get(0);
   }
 
   /**
@@ -136,8 +137,7 @@ public class Room {
             String adjacentRoom = exit.getAdjacentRoom();
             return Game.roomMap.get(adjacentRoom);
           }
-          System.out.println(exit.getKeyId());
-          System.out.println("It's locked so like find some key");
+          System.out.println("It's locked so find a key");
           return null;
         }
 
@@ -199,5 +199,12 @@ public class Room {
 
   public void addNPC (NPC npc) {
     NPCS.add(npc);
+  }
+
+  public boolean itemCheck() {
+    if(items.size() > 0){
+      return true;
+    }
+    return false;
   }
 }
