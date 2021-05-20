@@ -22,16 +22,17 @@ public class Inventory {
   }
 
   public boolean addItem(Item item) {
-    if (item.getWeight() + currentWeight <= maxWeight)
-    
+    if (item.getWeight() + currentWeight <= maxWeight){
+      currentWeight += item.getWeight();
       return items.add(item);
-    else {
+    } else {
       System.out.println("There is no room to add the item.");
       return false;
     }
   }
 
   public void listInventory() {
+    System.out.println("Your inventory max weight is: "+maxWeight);
     System.out.println("Inventory current weight: "+currentWeight);
     for(int i=0; i<=items.size()-1; i++){
       System.out.println(items.get(i).getName());
