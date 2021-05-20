@@ -435,18 +435,23 @@
         
         {
           "isLocked": false,
-          "direction": "PowerPlant",
+          "direction": " PowerPlant",
           "adjacentRoom": "Office2"
         },
         {
           "isLocked": false,
-          "direction": "Store",
+          "direction": " Store",
           "adjacentRoom": "Astore"
         },
         {
           "isLocked": false,
-          "direction": "Mall",
+          "direction": " Mall",
           "adjacentRoom": "Mall2"
+        },
+        {
+          "isLocked": false,
+          "direction": "Home",
+          "adjacentRoom": "Front-Lawn"
         }
         ]
     }

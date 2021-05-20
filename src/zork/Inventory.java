@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Inventory {
   private ArrayList<Item> items;
-  private int maxWeight = 10;
+  private int maxWeight;
   private int currentWeight;
 
   public Inventory(int maxWeight) {
@@ -19,6 +19,10 @@ public class Inventory {
 
   public int getCurrentWeight() {
     return currentWeight;
+  }
+
+  public int getSize() {
+    return items.size();
   }
 
   public boolean addItem(Item item) {
@@ -39,8 +43,8 @@ public class Inventory {
     }
   }
 
-  public String getId() {
-    return items.get(0).getId();
+  public String getId(int i) {
+    return items.get(i).getId();
   }
 
 }
