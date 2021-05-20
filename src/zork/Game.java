@@ -145,7 +145,7 @@ public class Game {
     System.out.println("Type 'help' if you need help.");
     System.out.println();
     System.out.println(currentRoom.longDescription());
-    System.out.println("Hey Bart, you are in the Simpson's house, start exploring. ");
+    System.out.println("Hey Bart, you are in the Simpson's house, start exploring. \n You hear a strange noise from the living room. Go through the kitchen and turn west in the entryway.");
   }
 
   /**
@@ -171,7 +171,11 @@ public class Game {
     } else if (commandWord.equals("eat")) {
       System.out.println("Do you really think you should be eating at a time like this?");
     } else if (commandWord.equals("pickup")) {
-        currentInventory.addItem(currentRoom.takeForInventory()); //this pickup is kinda inefficient and theres probably an easier way to do it but it works well enough
+      Item item = currentRoom.takeItem(command.getSecondWord());
+      if (item == null)
+        System.out.println("What " + command.getSecondWord() + "?");
+      else
+        currentInventory.addItem(item); 
     } else if(commandWord.equals("inventory")) {
       currentInventory.listInventory();
     }else if(commandWord.equals("talk to")){
@@ -199,7 +203,7 @@ public class Game {
   }
 
   // implementations of user commands:
-
+  
   /**
    * Print out some help information. Here we print some stupid, cryptic message
    * and a list of the command words.

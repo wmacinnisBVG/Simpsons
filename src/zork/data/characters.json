@@ -3,20 +3,20 @@
       {
         "id": "Homer",
         "name": "Homer",
-        "location": "Main-House-Lobby", 
-        "dialogue": "blah blah"
+        "location": "Main-House-Living-Room", 
+        "dialogue": "Bart! Doh I've been stabbed. \n Homer dies on the floor."
       },
       {
         "id": "Ned",
         "name": "Ned",
         "location": "Ned's-House-2",
-        "dialogue": "hi im ned"
+        "dialogue": "Hi didly ho Bart! Homers dead? Oh no! I knew my satan sense was tingling. I did see someone walking towards the Kwik-E-Mart down the street. \n Investigate the Kwik-E-Mart using the car."
       },
       {
         "id": "Smithers",
         "name": "Smithers",
         "location": "Office1",
-        "dialogue": "Hello"
+        "dialogue": "Hello Bart. What are you doing here? Homers dead?"
 
       },
       {
