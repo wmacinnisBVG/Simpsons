@@ -18,6 +18,24 @@
       "weight": 5,
       "isOpenable": false,
       "room": "Main-House-Living-Room" 
-      }
+      },
+      {
+        "name": "Chips",
+        "weight": 1,
+        "isOpenable": false,
+        "room": "Astore" 
+      },
+     {
+          "name": "Cookie",
+          "weight": 1,
+          "isOpenable": false,
+          "room": "Astore" 
+     }
+     {
+      "name": "Soda",
+      "weight": 1,
+      "isOpenable": false,
+      "room": "Astore" 
+    },
 ]
 }

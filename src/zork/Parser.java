@@ -25,9 +25,9 @@ public class Parser {
        words = new String[2];
       words[0] = inputLine.substring(0, space2);
       words[1] = inputLine.substring(space2);
-    }else
+    }else{
     words = inputLine.split(" ");
-    
+    }
     String word1 = words[0];
     String word2 = null;
     if (words.length > 1)

@@ -176,10 +176,20 @@ public class Game {
       currentInventory.listInventory();
     }else if(commandWord.equals("talk to")){
       for(NPC npc: currentRoom.getNPC()){
+        if(npc.getName() == "Apu"){
+          System.out.println(npc.talkTo()); 
+          System.out.println("Menu:\n Cookie: $1 \n Chips: $1 \n Soda: $1 \n please enter you would like to buy" );
+        }else
         System.out.println(npc.talkTo());
+
       }
     }else if(commandWord.equals("drive to")){
+      if(currentRoom == roomMap.get("Car")){
+      System.out.println(currentRoom);
       goRoom(command);
+      }else {
+        System.out.println("you cannot drive here, get in the car!");
+      }
       //here
     }else if(commandWord.equals("unlock")){
       String direction = command.getSecondWord();
@@ -212,10 +222,11 @@ public class Game {
       System.out.println("Go where?");
       return;
     }
-
+    
     String direction = command.getSecondWord();
 
     // Try to leave current room.
+    System.out.println(currentRoom.nextRoom(direction));
     Room nextRoom = currentRoom.nextRoom(direction);
 
     if (nextRoom == null)
