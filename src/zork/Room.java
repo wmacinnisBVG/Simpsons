@@ -98,6 +98,17 @@ public class Room {
     return temporary.get(0);
   }
 
+  public Item takeItem(String item){
+   
+    for (int i =0; i<items.size(); i++){
+      if (items.get(i).getName().equalsIgnoreCase(item)){
+        return items.remove(i);
+      }
+    }
+
+    return null;
+  }
+
   /**
    * Return a description of the items in the current room. 
    * 

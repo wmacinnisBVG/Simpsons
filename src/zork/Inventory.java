@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Inventory {
   private ArrayList<Item> items;
-  private int maxWeight;
+  private int maxWeight = 10;
   private int currentWeight;
 
   public Inventory(int maxWeight) {
@@ -23,6 +23,7 @@ public class Inventory {
 
   public boolean addItem(Item item) {
     if (item.getWeight() + currentWeight <= maxWeight)
+    
       return items.add(item);
     else {
       System.out.println("There is no room to add the item.");
@@ -31,7 +32,10 @@ public class Inventory {
   }
 
   public void listInventory() {
-    System.out.println(items.get(0).getName()); //This is just the beginning, I will change it into a for loop later unless someone else does it
+    System.out.println("Inventory current weight: "+currentWeight);
+    for(int i=0; i<=items.size()-1; i++){
+      System.out.println(items.get(i).getName());
+    }
   }
 
   public String getId() {
