@@ -2,14 +2,14 @@
     "items": [
       {
       "id": "1234",
-      "name": "Car Keys",
+      "name": "Keys",
       "weight": 2,
       "isOpenable": false,
       "room": "Main-House-Dining-Room" 
       },
       {
       "id": "dollarBill",
-      "name": "1 Dollar Bill",
+      "name": "Bill",
       "weight": 1,
       "isOpenable": false,
       "room": "Main-House-Kitchen"
