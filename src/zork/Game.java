@@ -192,7 +192,7 @@ public class Game {
         System.out.println(npc.talkTo());
       }
     }else if(commandWord.equals("buy")){
-      if(currentRoom.getRoomName().equals("Apu's store")&& currentInventory.checkInventory("Bill") ){
+      if(currentRoom.getRoomName().equals("Apu's store") && currentInventory.checkInventory("Bill") ){
         Item item = currentRoom.takeItem(command.getSecondWord());
         System.out.println(command.getSecondWord());
       if (item == null)
@@ -213,9 +213,17 @@ public class Game {
       //here
     }else if(commandWord.equals("unlock")){
       String direction = command.getSecondWord();
-      //currentRoom.unlockRoom(direction, currentInventory.getId());
-    } else if(commandWord.equals("drop")){
-     // Item item = currentInventory.getName(command.getSecondWord());
+      for(int i = 0; i < currentInventory.getSize(); i++){
+        currentRoom.unlockRoom(direction, currentInventory.getId(i));
+      } 
+        } else if(commandWord.equals("drop")){
+
+      Item item = currentInventory.removeItem(command.getSecondWord());
+      if (item == null){
+          System.out.println("You do not have the " + command.getSecondWord());
+      }else
+        currentRoom.addItem(item);
+     
 
     }
     return false;
