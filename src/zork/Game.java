@@ -171,8 +171,12 @@ public class Game {
     } else if (commandWord.equals("eat")) {
       System.out.println("Do you really think you should be eating at a time like this?");
     } else if (commandWord.equals("pickup")) {
+      
+        
       Item item = currentRoom.takeItem(command.getSecondWord());
-      if (item == null)
+      if(currentRoom.getRoomName().equals("Apu's store")){
+        System.out.println("Apu: please don't try to steal from my store, Talk to me first!");
+      }else if (item == null)
         System.out.println("What " + command.getSecondWord() + "?");
       else
         currentInventory.addItem(item); 
@@ -180,10 +184,32 @@ public class Game {
       currentInventory.listInventory();
     }else if(commandWord.equals("talk to")){
       for(NPC npc: currentRoom.getNPC()){
+
+        if(npc.getName().equals("Apu")){
+          System.out.println(npc.talkTo());
+          System.out.println(" 1. Chips \t$1 \n 2. Soda \t$1 \n 3. Cookie \t$1 \n please select your choice by using the word \"buy\"");
+        }else
         System.out.println(npc.talkTo());
       }
+    }else if(commandWord.equals("buy")){
+      if(currentRoom.getRoomName().equals("Apu's store")&& currentInventory.checkInventory("Bill") ){
+        Item item = currentRoom.takeItem(command.getSecondWord());
+        System.out.println(command.getSecondWord());
+      if (item == null)
+        System.out.println("Please choose from the three options in the store");
+      else
+        currentInventory.addItem(item); 
+      }else{
+        System.out.println("Oh no!, you need to have money to buy something, please come back with the right amount of money\n Hint: check your house for spage change");
+      }
+      
+      //here
     }else if(commandWord.equals("drive to")){
+      if(currentRoom.getRoomName().equals("Car"))
       goRoom(command);
+      else{
+      System.out.println("You cannot drive when you are not in a car!");
+      }
       //here
     }else if(commandWord.equals("unlock")){
       String direction = command.getSecondWord();

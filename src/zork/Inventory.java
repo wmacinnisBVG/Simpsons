@@ -35,6 +35,14 @@ public class Inventory {
     }
   }
 
+  public boolean checkInventory(String item){
+    for(Item x : items){
+      if(x.getName().equals(item))
+      return true;
+    }
+    return false; 
+  }
+
   public void listInventory() {
     System.out.println("Your inventory max weight is: "+maxWeight);
     System.out.println("Inventory current weight: "+currentWeight);
