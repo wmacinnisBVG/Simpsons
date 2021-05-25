@@ -187,7 +187,9 @@ public class Game {
       //here
     }else if(commandWord.equals("unlock")){
       String direction = command.getSecondWord();
-      currentRoom.unlockRoom(direction, currentInventory.getId());
+      for(int i = 0; i < currentInventory.getSize(); i++){
+        currentRoom.unlockRoom(direction, currentInventory.getId(i));
+      } 
     }
     return false;
   }
