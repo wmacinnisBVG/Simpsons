@@ -60,6 +60,9 @@ public void talk(){
     return dialogue; 
    }
 
+
+
+
 }
 
 

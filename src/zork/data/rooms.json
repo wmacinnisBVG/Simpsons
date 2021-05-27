@@ -160,7 +160,7 @@
     },
     {
       "id": "Mall1",
-      "name": "Springfield Mall",
+      "name": "Springfield Mall West Wing",
       "description": "You are in the west wing of Springfield Mall, have fun",
       "exits": [
         {
@@ -200,7 +200,7 @@
     },
     {
       "id": "Mall3",
-      "name": "Springfield Mall",
+      "name": "Springfield Mall East Wing",
       "description": "You are in the east wing of Springfield mall",
       "exits": [
         {

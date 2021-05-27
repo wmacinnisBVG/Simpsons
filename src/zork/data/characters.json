@@ -24,6 +24,12 @@
         "name": "Apu",
         "location": "Astore",
         "dialogue": "Hi bart, welcome to my store, before i talk to you, you must buy an item"
+      },
+      {
+        "id": "SideshowBob",
+        "name": "Sideshow Bob",
+        "location": "Mall3",
+        "dialogue": "HEY BART GET BACK OVER HERE"
       }
       
     ]
