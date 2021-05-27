@@ -175,7 +175,7 @@ public class Game {
         return true; // signal that we want to quit
     } else if (commandWord.equals("eat")) {
       System.out.println("Do you really think you should be eating at a time like this?");
-    } else if (commandWord.equals("pickup")) {
+    } else if (commandWord.equals("pick up")) {
       
         
       Item item = currentRoom.takeItem(command.getSecondWord());
@@ -218,8 +218,11 @@ public class Game {
       //here
     }else if(commandWord.equals("unlock")){
       String direction = command.getSecondWord();
-      currentRoom.unlockRoom(direction, currentInventory.getId(0));
+      for(int i = 0; i < currentInventory.getSize(); i++){
+        currentRoom.unlockRoom(direction, currentInventory.getId(i));
+      } 
     }
+    
     return false;
   }
 
@@ -286,11 +289,5 @@ public class Game {
       currentRoom = nextRoom;
       System.out.println(currentRoom.longDescription());
     }
-  }
-
-  
-
-  private void pickupObject(Command command){
-
   }
 }
