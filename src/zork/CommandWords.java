@@ -25,6 +25,9 @@ public class CommandWords {
     return false;
   }
 
+  public String[] getCommandWords(){
+    return validCommands;
+  }
   /*
    * Print all valid commands to System.out.
    */
