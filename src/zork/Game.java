@@ -15,7 +15,9 @@ public class Game {
 
   private Parser parser;
   private Room currentRoom;
+  private Room lastRoom; 
   private Inventory currentInventory = new Inventory(10);
+  
   
 
   public ArrayList<Item> gameItems = new ArrayList<Item>();
@@ -25,7 +27,7 @@ public class Game {
   public Game() {
     try {
       initRooms("src\\zork\\data\\rooms.json");
-      currentRoom = roomMap.get("Main-House-TV-Room");
+      currentRoom = roomMap.get("Car");
       initItems("src\\zork\\data\\items.json");
       initCharacters("src\\zork\\data\\characters.json");
     } catch (Exception e) {
@@ -119,17 +121,20 @@ public class Game {
    */
   public void play() {
     printWelcome();
-
+   
     boolean finished = false;
     while (!finished) {
       Command command;
+      lastRoom = currentRoom;
+      
+     
       try {
         command = parser.getCommand();
         finished = processCommand(command);
       } catch (IOException e) {
         e.printStackTrace();
       }
-
+      endChase();
     }
     System.out.println("Thank you for playing.  Good bye.");
   }
@@ -194,11 +199,11 @@ public class Game {
     }else if(commandWord.equals("buy")){
       if(currentRoom.getRoomName().equals("Apu's store")&& currentInventory.checkInventory("Bill") ){
         Item item = currentRoom.takeItem(command.getSecondWord());
-        System.out.println(command.getSecondWord());
       if (item == null)
         System.out.println("Please choose from the three options in the store");
       else
         currentInventory.addItem(item); 
+        //remove bill from inventory
       }else{
         System.out.println("Oh no!, you need to have money to buy something, please come back with the right amount of money\n Hint: check your house for spage change");
       }
@@ -232,13 +237,40 @@ public class Game {
     parser.showCommands();
   }
 
+
+  private void endChase(){
+    boolean chase = false;
+    
+    NPC Bob = roomMap.get("Mall3").getNPC().get(0);
+    
+
+    if(currentRoom.getRoomName().equals("Springfield Mall East Wing")){
+     chase = true;
+     System.out.println(("\n !!!! QUICK Run away from Sideshow bob and report him to the police station as quick as possible !!!"));
+
+     for(NPC npc: currentRoom.getNPC()){
+       System.out.println(npc.talkTo());
+     }
+    }
+    if(chase){
+      
+        Bob.setLocation(lastRoom.getRoomName());
+        
+        if(Bob.getLocation().equals(currentRoom.getRoomName())){
+          System.out.println("I CAUGHT YOU");
+        }
+      
+    }
+    System.out.println("\nBOBS LOCATION: " + Bob.getLocation());
+  }
+
   /**
    * Try to go to one direction. If there is an exit, enter the new room,
    * otherwise print an error message.
    */
   private void goRoom(Command command) {
     if (!command.hasSecondWord()) {
-      // if there is no second word, we don't know where to go...
+      // if there is no second word, we don't know where to  go...
       System.out.println("Go where?");
       return;
     }
@@ -255,6 +287,8 @@ public class Game {
       System.out.println(currentRoom.longDescription());
     }
   }
+
+  
 
   private void pickupObject(Command command){
 
