@@ -27,7 +27,7 @@ public class Game {
   public Game() {
     try {
       initRooms("src\\zork\\data\\rooms.json");
-      currentRoom = roomMap.get("Car");
+      currentRoom = roomMap.get("Main-House-TV-Room");
       initItems("src\\zork\\data\\items.json");
       initCharacters("src\\zork\\data\\characters.json");
     } catch (Exception e) {
@@ -49,8 +49,10 @@ public class Game {
       String roomName = (String) ((JSONObject) roomObj).get("name");
       String roomId = (String) ((JSONObject) roomObj).get("id");
       String roomDescription = (String) ((JSONObject) roomObj).get("description");
+      Boolean isDark = (Boolean) ((JSONObject) roomObj).get("isDark");
       room.setDescription(roomDescription);
       room.setRoomName(roomName);
+      room.setDark(isDark);
 
       JSONArray jsonExits = (JSONArray) ((JSONObject) roomObj).get("exits");
       ArrayList<Exit> exits = new ArrayList<Exit>();
@@ -88,6 +90,8 @@ public class Game {
       item.setOpen(itemIsOpenable);
       String id = (String) ((JSONObject) roomObj).get("id");
       item.setId(id);
+      boolean itemIsUseable = (boolean) ((JSONObject) roomObj).get ("isUseable");
+      item.setUseable(itemIsUseable);
       String roomId = (String) ((JSONObject) roomObj).get("room");
       roomMap.get(roomId).addItem(item);
       //gameItems.add(item); 
@@ -230,6 +234,21 @@ public class Game {
         currentRoom.addItem(item);
      
 
+    }else if(commandWord.equals("use")){
+      if(command.hasSecondWord()){
+        String item = command.getSecondWord().toLowerCase();
+        for(int i = 0; i < currentInventory.getSize(); i++){ //put other useable items in this loop if you want
+          if(item.equals("flashlight") && currentInventory.getName(i).equals("Flashlight")){
+            if(currentRoom.getDark()){
+              System.out.println("You can now see your surrounding area.");
+              currentRoom.setDark(false);
+              System.out.println(currentRoom.longDescription());
+            }else{
+              System.out.println("You can already see everything around you.");
+            }
+          }
+        }
+      }
     }
     
     return false;
