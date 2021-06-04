@@ -30,7 +30,7 @@ public class Inventory {
       currentWeight += item.getWeight();
       return items.add(item);
     } else {
-      System.out.println("There is no room to add the item.");
+      System.out.println("\nYou can't pick up this item because you have reached the weight limit for your inventory.");
       return false;
     }
   }
@@ -53,7 +53,7 @@ public class Inventory {
     for(int i=0; i< items.size(); i++){
       if(items.get(i).getName().equals(item)){
         currentWeight -= itemWeight; 
-        System.out.println("You dropped " + items.get(i).getName() + ".");
+        System.out.println("You dropped " + items.get(i).getName() + ". \n");
         return items.remove(i);
       }
     }
@@ -68,9 +68,10 @@ public class Inventory {
   }
 
   public void listInventory() {
-    System.out.println("Your inventory max weight is: "+maxWeight);
-    System.out.println("Inventory current weight: "+currentWeight);
+    System.out.println("Your inventory max weight is: "+maxWeight + "\t");
+    System.out.print("||\t Inventory current weight: "+currentWeight);
     for(int i=0; i<=items.size()-1; i++){
+      System.out.println("");
       System.out.println(items.get(i).getName());
     }
   }

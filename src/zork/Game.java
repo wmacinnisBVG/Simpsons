@@ -131,7 +131,6 @@ public class Game {
       Command command;
       lastRoom = currentRoom;
       
-     
       try {
         command = parser.getCommand();
         finished = processCommand(command);
@@ -154,7 +153,7 @@ public class Game {
     System.out.println("Type 'help' if you need help.");
     System.out.println();
     System.out.println(currentRoom.longDescription());
-    System.out.println("Hey Bart, you are in the Simpson's house, start exploring. \n You hear a strange noise from the living room. Go through the kitchen and turn west in the entryway.");
+    System.out.println("Hey Bart, you are in the Simpson's house, start exploring. \n\n You hear a strange noise from the living room. Go through the kitchen and turn west in the entryway.");
   }
 
   /**
@@ -181,7 +180,6 @@ public class Game {
       System.out.println("Do you really think you should be eating at a time like this?");
     } else if (commandWord.equals("pick up")) {
       
-        
       Item item = currentRoom.takeItem(command.getSecondWord());
       if(currentRoom.getRoomName().equals("Apu's store")){
         System.out.println("Apu: please don't try to steal from my store, Talk to me first!");
@@ -217,7 +215,7 @@ public class Game {
       if(currentRoom.getRoomName().equals("Car"))
       goRoom(command);
       else{
-      System.out.println("You cannot drive when you are not in a car!");
+      System.out.println("\nYou cannot drive when you are not in a car!");
       }
       //here
     }else if(commandWord.equals("unlock")){
@@ -243,11 +241,11 @@ public class Game {
         for(int i = 0; i < currentInventory.getSize(); i++){ //put other useable items in this loop if you want
           if(item.equals("flashlight") && currentInventory.getName(i).equals("Flashlight")){
             if(currentRoom.getDark()){
-              System.out.println("You can now see your surrounding area.");
+              System.out.println("\n You can now see your surrounding area.");
               currentRoom.setDark(false);
               System.out.println(currentRoom.longDescription());
             }else{
-              System.out.println("You can already see everything around you.");
+              System.out.println("\nYou can already see everything around you.");
             }
           }
         }
@@ -320,7 +318,7 @@ public class Game {
       System.out.println("There is no door!");
     else {
       currentRoom = nextRoom;
-      System.out.println(currentRoom.longDescription());
+      System.out.println("\n \n " + currentRoom.longDescription());
     }
   }
 }

@@ -72,11 +72,14 @@ public class Room {
    */
   public String longDescription() {
     if(roomName.equals("Living Room")){
-      return "Room: " + roomName + "\n\n" + description + "\n" + exitString() + "\n" + itemString() + "\n" + NPCString() + "\n You see Homer lying in a puddle of blood on the floor. The wound is still fresh, the killer must be close by. Talk to Homer to find out what happened.";
-    } else if(!isDark){
-      return "Room: " + roomName + "\n\n" + description + "\n" + exitString() + "\n" + itemString() + "\n" + NPCString();
+      return "\n" + description +"\n \nRoom: " + roomName+  "  ||  " + exitString() + "  ||  " + itemString() + "\n" + NPCString() + "\n You see Homer lying in a puddle of blood on the floor. The wound is still fresh, the killer must be close by. Talk to Homer to find out what happened.";
+    } else if(roomName.equals("car")){
+      return"Hello Bart, you are now in the car. To drive to car, please use the command word \" drive to\" and enter the location you want to reach" + 
+      "\n\n" + exitString() ;
+    }else if(!isDark){
+      return "\n" + description +"\n \n Room: " + roomName+  "  ||  " + exitString() + "  ||  " + itemString() + "\n" + NPCString();
     } else {
-      return "You can't see";
+      return "\n This room is very dark, you can't see anything right now. Try to find some light";
     }
     
 
@@ -119,7 +122,7 @@ public class Room {
    
     for (int i =0; i<items.size(); i++){
       if (items.get(i).getName().equalsIgnoreCase(item)){
-        System.out.println("You picked up " + items.get(i).getName() + ".");
+        System.out.println("\n You picked up " + items.get(i).getName() + ".");
         return items.remove(i);
       }
     }
@@ -174,7 +177,7 @@ public class Room {
             return Game.roomMap.get(adjacentRoom);
           }
           System.out.println(exit.getKeyId());
-          System.out.println("It's locked so like find some key");
+          System.out.println("\n The area you want to enter appears locked....");
           return null;
         }
 
