@@ -33,7 +33,7 @@
       "id": "Main-House-Kitchen",
       "name": "Kitchen",
       "description": "The kitchen of the Simpsons house.",
-      "isDark": false,
+      "isDark": true,
       "exits": [
         {
           "isLocked": false,
@@ -96,7 +96,7 @@
       "id": "Front-Lawn",
       "name": "Front Lawn",
       "description": "The front lawn of the Simpsons house.",
-      "isDark": true,
+      "isDark": false,
       "exits":[
         {
           "isLocked": false,
