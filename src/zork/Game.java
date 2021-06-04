@@ -290,8 +290,6 @@ public class Game {
      if( currentRoom.checkRoom("Sideshow Bob")||bobLast.equals(currentRoom.getRoomName()))
      System.out.println("I CAUGHT U");
       roomMap.get("Mall3").getNPC().get(0).setLocation(lastRoom.getRoomName());
-        System.out.println("\nBOBS LOCATION: " +   roomMap.get("Mall3").getNPC().get(0).getLocation());
-        System.out.println("My Location:" + currentRoom.getRoomName());
        
           
         
