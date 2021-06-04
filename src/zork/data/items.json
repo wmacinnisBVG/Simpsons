@@ -9,6 +9,13 @@
       "room": "Main-House-Dining-Room" 
       },
       {
+      "id": "hart1",
+      "name": "Hart",
+      "weight": 0,
+      "isOpenable": false,
+      "room": "Main-House-Dining-Room"
+      },
+      {
       "id": "dollarBill",
       "name": "Dollar Bill",
       "weight": 1,
