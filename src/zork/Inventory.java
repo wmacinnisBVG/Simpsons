@@ -51,10 +51,11 @@ public class Inventory {
     }
 
     for(int i=0; i< items.size(); i++){
-      if(items.get(i).getName().equals(item))
+      if(items.get(i).getName().equals(item)){
         currentWeight -= itemWeight; 
         System.out.println("You dropped " + items.get(i).getName() + ".");
         return items.remove(i);
+      }
     }
     return null; 
   }
