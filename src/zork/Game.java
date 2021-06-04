@@ -245,10 +245,8 @@ public class Game {
         currentRoom.addItem(item);
       }
 
-<<<<<<< HEAD
     } else if(commandWord.equals("health")){
       System.out.println("You are currently at "+harts.getHarts()+" harts.") ; 
-=======
     }else if(commandWord.equals("use")){
       if(command.hasSecondWord()){
         String item = command.getSecondWord().toLowerCase();
@@ -264,7 +262,6 @@ public class Game {
           }
         }
       }
->>>>>>> de726b9e692908ef1b515fd42c74535144e3c7be
     }
     return false;
   }
