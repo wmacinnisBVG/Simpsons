@@ -17,7 +17,7 @@ public class Game {
   private Room currentRoom;
   private Room lastRoom; 
   private Inventory currentInventory = new Inventory(10);
-  
+  public Health harts = new Health();
   
 
   public ArrayList<Item> gameItems = new ArrayList<Item>();
@@ -27,7 +27,7 @@ public class Game {
   public Game() {
     try {
       initRooms("src\\zork\\data\\rooms.json");
-      currentRoom = roomMap.get("Car");
+      currentRoom = roomMap.get("Main-House-TV-Room");
       initItems("src\\zork\\data\\items.json");
       initCharacters("src\\zork\\data\\characters.json");
     } catch (Exception e) {
@@ -184,7 +184,14 @@ public class Game {
       }else if (item == null)
         System.out.println("What " + command.getSecondWord() + "?");
       else
-        currentInventory.addItem(item); 
+        if(command.getSecondWord() == "Hart" || command.getSecondWord() == "hart"){
+          currentInventory.addItem(item);
+          Health.addHealth();
+          currentInventory.removeItem(command.getSecondWord());
+        } else {
+          currentInventory.addItem(item);
+        }
+         
     } else if(commandWord.equals("inventory")) {
       currentInventory.listInventory();
     }else if(commandWord.equals("talk to")){
@@ -226,10 +233,12 @@ public class Game {
       Item item = currentInventory.removeItem(command.getSecondWord());
       if (item == null){
           System.out.println("You do not have the " + command.getSecondWord());
-      }else
+      }else{
         currentRoom.addItem(item);
-     
+      }
 
+    } else if(commandWord.equals("health")){
+      System.out.println("You are currently at "+harts.getHarts()+" harts.") ; 
     }
     
     return false;

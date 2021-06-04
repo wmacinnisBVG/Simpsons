@@ -1,8 +1,8 @@
 package zork;
 
 public class Health {
-    private int harts = 5;
-    public int getHearts(){
+    private static int harts = 3;
+    public int getHarts(){
         return harts;
     }
     public void takeDamage(){
@@ -14,9 +14,10 @@ public class Health {
     public void getFullHealth(){
         System.out.println("Your full health is: "+harts+" harts");
     }
-    public void addHealth(){
+    public static void addHealth(){
         if(harts < 5){
             harts += 1;
+            System.out.println("You have picked up a hart!");
         } else {
             System.out.println("Your health is already full!");
         }
