@@ -6,6 +6,7 @@ import java.util.ArrayList;
 public class Room {
   private String roomName;
   private String description;
+  private boolean isDark;
   private ArrayList<Exit> exits;
   private ArrayList<Item> items;
   private ArrayList<NPC> NPCS;
@@ -72,8 +73,10 @@ public class Room {
   public String longDescription() {
     if(roomName.equals("Living Room")){
       return "Room: " + roomName + "\n\n" + description + "\n" + exitString() + "\n" + itemString() + "\n" + NPCString() + "\n You see Homer lying in a puddle of blood on the floor. The wound is still fresh, the killer must be close by. Talk to Homer to find out what happened.";
-    } else {
+    } else if(!isDark){
       return "Room: " + roomName + "\n\n" + description + "\n" + exitString() + "\n" + itemString() + "\n" + NPCString();
+    } else {
+      return "You can't see";
     }
     
 
@@ -116,6 +119,7 @@ public class Room {
    
     for (int i =0; i<items.size(); i++){
       if (items.get(i).getName().equalsIgnoreCase(item)){
+        System.out.println("You picked up " + items.get(i).getName() + ".");
         return items.remove(i);
       }
     }
@@ -233,4 +237,22 @@ public class Room {
   public void addNPC (NPC npc) {
     NPCS.add(npc);
   }
+
+  public boolean checkRoom(String Name){
+    for(NPC npc: NPCS){
+      if(npc.getName().equals(Name))
+      return true;
+    }
+    return false; 
+  }
+ 
+  
+  public void setDark(boolean isDark) {
+    this.isDark = isDark;
+  }
+
+  public boolean getDark() {
+    return isDark;
+  }
+
 }

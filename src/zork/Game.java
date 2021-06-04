@@ -18,6 +18,7 @@ public class Game {
   private Room lastRoom; 
   private Inventory currentInventory = new Inventory(10);
   public Health harts = new Health();
+  private boolean chase;
   
 
   public ArrayList<Item> gameItems = new ArrayList<Item>();
@@ -49,8 +50,10 @@ public class Game {
       String roomName = (String) ((JSONObject) roomObj).get("name");
       String roomId = (String) ((JSONObject) roomObj).get("id");
       String roomDescription = (String) ((JSONObject) roomObj).get("description");
+      Boolean isDark = (Boolean) ((JSONObject) roomObj).get("isDark");
       room.setDescription(roomDescription);
       room.setRoomName(roomName);
+      room.setDark(isDark);
 
       JSONArray jsonExits = (JSONArray) ((JSONObject) roomObj).get("exits");
       ArrayList<Exit> exits = new ArrayList<Exit>();
@@ -88,6 +91,8 @@ public class Game {
       item.setOpen(itemIsOpenable);
       String id = (String) ((JSONObject) roomObj).get("id");
       item.setId(id);
+      boolean itemIsUseable = (boolean) ((JSONObject) roomObj).get ("isUseable");
+      item.setUseable(itemIsUseable);
       String roomId = (String) ((JSONObject) roomObj).get("room");
       roomMap.get(roomId).addItem(item);
       //gameItems.add(item); 
@@ -228,6 +233,9 @@ public class Game {
       for(int i = 0; i < currentInventory.getSize(); i++){
         currentRoom.unlockRoom(direction, currentInventory.getId(i));
       } 
+    } else if(commandWord.equals("hide")) {
+      
+      
         } else if(commandWord.equals("drop")){
 
       Item item = currentInventory.removeItem(command.getSecondWord());
@@ -237,10 +245,27 @@ public class Game {
         currentRoom.addItem(item);
       }
 
+<<<<<<< HEAD
     } else if(commandWord.equals("health")){
       System.out.println("You are currently at "+harts.getHarts()+" harts.") ; 
+=======
+    }else if(commandWord.equals("use")){
+      if(command.hasSecondWord()){
+        String item = command.getSecondWord().toLowerCase();
+        for(int i = 0; i < currentInventory.getSize(); i++){ //put other useable items in this loop if you want
+          if(item.equals("flashlight") && currentInventory.getName(i).equals("Flashlight")){
+            if(currentRoom.getDark()){
+              System.out.println("You can now see your surrounding area.");
+              currentRoom.setDark(false);
+              System.out.println(currentRoom.longDescription());
+            }else{
+              System.out.println("You can already see everything around you.");
+            }
+          }
+        }
+      }
+>>>>>>> de726b9e692908ef1b515fd42c74535144e3c7be
     }
-    
     return false;
   }
 
@@ -260,10 +285,7 @@ public class Game {
 
 
   private void endChase(){
-    boolean chase = false;
-    
-    NPC Bob = roomMap.get("Mall3").getNPC().get(0);
-    
+    String bobLast = roomMap.get("Mall3").getNPC().get(0).getLocation();
 
     if(currentRoom.getRoomName().equals("Springfield Mall East Wing")){
      chase = true;
@@ -273,17 +295,23 @@ public class Game {
        System.out.println(npc.talkTo());
      }
     }
-    if(chase){
-      
-        Bob.setLocation(lastRoom.getRoomName());
+
+    
+   
+    if(chase && !currentRoom.getRoomName().equals("Bush")){
+
+     if( currentRoom.checkRoom("Sideshow Bob")||bobLast.equals(currentRoom.getRoomName()))
+     System.out.println("I CAUGHT U");
+      roomMap.get("Mall3").getNPC().get(0).setLocation(lastRoom.getRoomName());
+       
+          
         
-        if(Bob.getLocation().equals(currentRoom.getRoomName())){
-          System.out.println("I CAUGHT YOU");
-        }
       
     }
-    System.out.println("\nBOBS LOCATION: " + Bob.getLocation());
-  }
+   
+    }
+    
+  
 
   /**
    * Try to go to one direction. If there is an exit, enter the new room,

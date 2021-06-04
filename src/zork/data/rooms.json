@@ -4,6 +4,7 @@
       "id": "Main-House-Lobby",
       "name": "Entryway",
       "description": "You are in the main entryway into the house.",
+      "isDark": false,
       "exits": [
         {
           "isLocked": false,
@@ -32,6 +33,7 @@
       "id": "Main-House-Kitchen",
       "name": "Kitchen",
       "description": "The kitchen of the Simpsons house.",
+      "isDark": false,
       "exits": [
         {
           "isLocked": false,
@@ -54,6 +56,7 @@
       "id": "Main-House-Living-Room",
       "name": "Living Room",
       "description": "Livingroom of the Simpsons house.",
+      "isDark": false,
       "exits":[
         {
           "isLocked": false,
@@ -66,6 +69,7 @@
       "id": "Main-House-Dining-Room",
       "name": "Dining Room",
       "description": "The Simpsons dining room.",
+      "isDark": false,
       "exits":[
         {
           "isLocked": false,
@@ -78,6 +82,7 @@
       "id": "Main-House-TV-Room",
       "name": "TV Room",
       "description": "The Simpsons TV room.",
+      "isDark": false,
       "exits":[
         {
           "isLocked": false,
@@ -91,6 +96,7 @@
       "id": "Front-Lawn",
       "name": "Front Lawn",
       "description": "The front lawn of the Simpsons house.",
+      "isDark": true,
       "exits":[
         {
           "isLocked": false,
@@ -114,6 +120,7 @@
       "id": "Ned's-House-2",
       "name": "Ned's Main Room",
       "description": "The main room inside Ned's house.",
+      "isDark": false,
       "exits":[
         {
           "isLocked": false,
@@ -126,6 +133,7 @@
       "id": "Ned's-House-1",
       "name": "Ned's Side Room",
       "description": "The side room inside Ned's house.",
+      "isDark": false,
       "exits":[
         {
           "isLocked": false,
@@ -138,6 +146,7 @@
       "id": "Ned's-House-3",
       "name": "Ned's Other Side Room",
       "description": "The other side room inside Ned's house.",
+      "isDark": false,
       "exits":[
         {
           "isLocked": false,
@@ -150,6 +159,7 @@
       "id": "Astore",
       "name": "Apu's store",
       "description": "You are in Apu's convenience store, feel free to buy food, water or candy",
+      "isDark": false,
       "exits": [
         {
           "isLocked": false,
@@ -162,6 +172,7 @@
       "id": "Mall1",
       "name": "Springfield Mall West Wing",
       "description": "You are in the west wing of Springfield Mall, have fun",
+      "isDark": false,
       "exits": [
         {
           "isLocked": false,
@@ -174,6 +185,7 @@
       "id": "Mall2",
       "name": "Springfield Mall",
       "description": "You are in the central part of Springfield Mall",
+      "isDark": false,
       "exits": [
         {
           "isLocked": false,
@@ -202,6 +214,7 @@
       "id": "Mall3",
       "name": "Springfield Mall East Wing",
       "description": "You are in the east wing of Springfield mall",
+      "isDark": false,
       "exits": [
         {
           "isLocked": false,
@@ -214,6 +227,7 @@
      "id": "Office1",
       "name": "Power Plant",
       "description": "You are in Smither's Office in Springfield Powerplant Station",
+      "isDark": false,
       "exits": [
         {
           "isLocked": false,
@@ -226,6 +240,7 @@
      "id": "Office2",
       "name": "Power Plant",
       "description": "You are in the mysterious Springfield Powerplant Station, beware of radiation",
+      "isDark": false,
       "exits": [
         {
           "isLocked": false,
@@ -253,6 +268,7 @@
      "id": "Office3",
       "name": "Power Plant",
       "description": "You are in Mr.Burns office in Springfield Powerplant Station, becareful with what you say",
+      "isDark": false,
       "exits": [
         {
           "isLocked": true,
@@ -266,6 +282,7 @@
       "id": "Storage1",
        "name": "Power Plant",
        "description": "You are in a dark storage room, you are surrounded by shelves and odd items",
+       "isDark": false,
        "exits": [
          {
            "isLocked": false,
@@ -278,6 +295,7 @@
       "id": "Storage2",
        "name": "Power Plant",
        "description": "You are in a dark storage room, you are surrounded by shelves and odd items",
+       "isDark": false,
        "exits": [
          {
            "isLocked": false,
@@ -300,6 +318,7 @@
       "id": "Storage3",
        "name": "Power Plant",
        "description": "You are in a dark storage room, you are surrounded by shelves and odd items",
+       "isDark": false,
        "exits": [
          {
            "isLocked": false,
@@ -310,8 +329,9 @@
      },
     {
       "id": "Path1",
-      "name": "Path",
+      "name": "Path Entryway",
       "description": "A path leading somewhere.",
+      "isDark": false,
       "exits": [
         {
           "isLocked": false,
@@ -329,6 +349,7 @@
       "id": "Path2",
       "name": "Path",
       "description": "A path leading somewhere.",
+      "isDark": false,
       "exits": [
         {
           "isLocked": false,
@@ -338,7 +359,12 @@
         {
           "isLocked": false,
           "direction": "West",
-          "adjacentRoom": "Pathw3"
+          "adjacentRoom": "Path3"
+        },
+        {
+          "isLocked": false,
+          "direction": "East",
+          "adjacentRoom": "bush1"
         },
         {
           "isLocked": false,
@@ -349,8 +375,9 @@
     },
     {
       "id": "PathX",
-      "name": "Path",
+      "name": "Deadend",
       "description": "A dead end.",
+      "isDark": false,
       "exits": [
         {
           "isLocked": false,
@@ -361,8 +388,9 @@
     },
     {
       "id": "Path3",
-      "name": "Path",
+      "name": "Mysterious path",
       "description": "A path leading somewhere.",
+      "isDark": false,
       "exits": [
         {
           "isLocked": false,
@@ -378,13 +406,19 @@
     },
     {
       "id": "Path4",
-      "name": "Path",
+      "name": "Path leading to police station",
       "description": "A path leading somewhere.",
+      "isDark": false,
       "exits": [
         {
           "isLocked": false,
           "direction": "East",
           "adjacentRoom": "Path3"
+        },
+        {
+          "isLocked": false,
+          "direction": "South",
+          "adjacentRoom": "bush2"
         },
         {
           "isLocked": false,
@@ -395,13 +429,19 @@
     },
     {
       "id": "Path5",
-      "name": "Path",
+      "name": "Deep Path",
       "description": "A path leading somewhere.",
+      "isDark": false,
       "exits": [
         {
           "isLocked": false,
           "direction": "East",
           "adjacentRoom": "Path4"
+        },
+        {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "bush4"
         },
         {
           "isLocked": false,
@@ -412,8 +452,9 @@
     },
     {
       "id": "Path6",
-      "name": "Path",
+      "name": "Path Exit",
       "description": "A path leading somewhere.",
+      "isDark": false,
       "exits": [
         {
           "isLocked": false,
@@ -428,9 +469,49 @@
         ]
     },
     {
+      "id": "bush1",
+      "name": "Bush",
+      "description": "A bush",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "West",
+          "adjacentRoom": "Path2"
+        }
+        
+        ]
+    },
+    {
+      "id": "bush2",
+      "name": "Bush",
+      "description": "A bush",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "Path4"
+        }
+        
+        ]
+    },
+    {
+      "id": "bush3",
+      "name": "Bush",
+      "description": "A bush",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "South",
+          "adjacentRoom": "Path5"
+        }
+        
+        ]
+    },
+    {
       "id": "Car",
       "name": "Car",
       "description": "You are in Homer's car, You can drive anywhere",
+      "isDark": false,
       "exits": [
         
         {
