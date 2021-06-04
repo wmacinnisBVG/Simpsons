@@ -6,7 +6,7 @@ public class Inventory {
   private ArrayList<Item> items;
   private int maxWeight;
   private int currentWeight;
-
+  private long itemWeight;
   public Inventory(int maxWeight) {
     this.items = new ArrayList<Item>();
     this.maxWeight = maxWeight;
@@ -35,6 +35,29 @@ public class Inventory {
     }
   }
 
+  /*
+  public boolean removeItem(Item item){
+    return items.remove(item);
+  }
+*/
+  public Item removeItem(String item){
+    
+    //Get Item weight
+    for(Item x : items){
+      if(x.getName().equals(item)){
+        itemWeight  = x.getWeight();
+      }
+        
+    }
+
+    for(int i=0; i< items.size(); i++){
+      if(items.get(i).getName().equals(item))
+        currentWeight -= itemWeight; 
+        System.out.println("You dropped " + items.get(i).getName() + ".");
+        return items.remove(i);
+    }
+    return null; 
+  }
   public boolean checkInventory(String item){
     for(Item x : items){
       if(x.getName().equals(item))
@@ -55,4 +78,8 @@ public class Inventory {
     return items.get(i).getId();
   }
 
+  public String getName(int i) {
+    return items.get(i).getName();
+  }
+ 
 }

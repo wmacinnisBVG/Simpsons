@@ -5,6 +5,7 @@
       "name": "Keys",
       "weight": 2,
       "isOpenable": false,
+      "isUseable": false,
       "room": "Main-House-Dining-Room" 
       },
       {
@@ -12,6 +13,7 @@
       "name": "Bill",
       "weight": 1,
       "isOpenable": false,
+      "isUseable": false,
       "room": "Main-House-Kitchen"
       },
       {
@@ -19,24 +21,28 @@
       "name": "Bloody Knife",
       "weight": 5,
       "isOpenable": false,
+      "isUseable": false,
       "room": "Main-House-Living-Room" 
       },
       {
         "name": "Chips",
         "weight": 1,
         "isOpenable": false,
+        "isUseable": false,
         "room": "Astore" 
       },
      {
           "name": "Cookie",
           "weight": 1,
           "isOpenable": false,
+          "isUseable": false,
           "room": "Astore" 
      },
      {
       "name": "Soda",
       "weight": 1,
       "isOpenable": false,
+      "isUseable": false,
       "room": "Astore" 
     },
     {
@@ -44,6 +50,7 @@
       "name": "TV Remote",
       "weight": 7,
       "isOpenable": false,
+      "isUseable": false,
       "room": "Main-House-TV-Room"
       },
       {
@@ -51,6 +58,7 @@
       "name": "Magazine",
       "weight": 1,
       "isOpenable": false,
+      "isUseable": false,
       "room": "Main-House-TV-Room"
       },
       {
@@ -58,6 +66,7 @@
       "name": "Cup",
       "weight": 2,
       "isOpenable": false,
+      "isUseable": false,
       "room": "Main-House-TV-Room"
       },
       {
@@ -65,7 +74,16 @@
       "name": "Receipt",
       "weight": 1,
       "isOpenable": false,
+      "isUseable": false,
       "room": "Main-House-TV-Room"  
+      },
+      {
+      "id": "torch",
+      "name": "Flashlight",
+      "weight": 1,
+      "isOpenable": false,
+      "isUseable": false,
+      "room": "Main-House-TV-Room"    
       }
 ]
 }

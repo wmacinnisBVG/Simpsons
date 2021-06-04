@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Zork",
+            "request": "launch",
+            "mainClass": "zork.Zork",
+            "projectName": "Simpsons_9fb7eb81"
+        },
+        {
+            "type": "java",
+            "name": "Launch Zork",
+            "request": "launch",
+            "mainClass": "Zork",
+            "projectName": "Simpsons_9fb7eb81"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"
