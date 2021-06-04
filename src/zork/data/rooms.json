@@ -310,7 +310,7 @@
      },
     {
       "id": "Path1",
-      "name": "Path",
+      "name": "Path Entryway",
       "description": "A path leading somewhere.",
       "exits": [
         {
@@ -338,7 +338,12 @@
         {
           "isLocked": false,
           "direction": "West",
-          "adjacentRoom": "Pathw3"
+          "adjacentRoom": "Path3"
+        },
+        {
+          "isLocked": false,
+          "direction": "East",
+          "adjacentRoom": "bush1"
         },
         {
           "isLocked": false,
@@ -349,7 +354,7 @@
     },
     {
       "id": "PathX",
-      "name": "Path",
+      "name": "Deadend",
       "description": "A dead end.",
       "exits": [
         {
@@ -361,7 +366,7 @@
     },
     {
       "id": "Path3",
-      "name": "Path",
+      "name": "Mysterious path",
       "description": "A path leading somewhere.",
       "exits": [
         {
@@ -378,13 +383,18 @@
     },
     {
       "id": "Path4",
-      "name": "Path",
+      "name": "Path leading to police station",
       "description": "A path leading somewhere.",
       "exits": [
         {
           "isLocked": false,
           "direction": "East",
           "adjacentRoom": "Path3"
+        },
+        {
+          "isLocked": false,
+          "direction": "South",
+          "adjacentRoom": "bush2"
         },
         {
           "isLocked": false,
@@ -395,13 +405,18 @@
     },
     {
       "id": "Path5",
-      "name": "Path",
+      "name": "Deep Path",
       "description": "A path leading somewhere.",
       "exits": [
         {
           "isLocked": false,
           "direction": "East",
           "adjacentRoom": "Path4"
+        },
+        {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "bush4"
         },
         {
           "isLocked": false,
@@ -412,7 +427,7 @@
     },
     {
       "id": "Path6",
-      "name": "Path",
+      "name": "Path Exit",
       "description": "A path leading somewhere.",
       "exits": [
         {
@@ -425,6 +440,45 @@
           "direction": "West",
           "adjacentRoom": "PoliceStation"
         }
+        ]
+    },
+    {
+      "id": "bush1",
+      "name": "Bush",
+      "description": "A bush",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "West",
+          "adjacentRoom": "Path2"
+        }
+        
+        ]
+    },
+    {
+      "id": "bush2",
+      "name": "Bush",
+      "description": "A bush",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "Path4"
+        }
+        
+        ]
+    },
+    {
+      "id": "bush3",
+      "name": "Bush",
+      "description": "A bush",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "South",
+          "adjacentRoom": "Path5"
+        }
+        
         ]
     },
     {

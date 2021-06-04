@@ -17,7 +17,7 @@ public class Game {
   private Room currentRoom;
   private Room lastRoom; 
   private Inventory currentInventory = new Inventory(10);
-  
+  private boolean chase;
   
 
   public ArrayList<Item> gameItems = new ArrayList<Item>();
@@ -27,7 +27,7 @@ public class Game {
   public Game() {
     try {
       initRooms("src\\zork\\data\\rooms.json");
-      currentRoom = roomMap.get("Car");
+      currentRoom = roomMap.get("Mall2");
       initItems("src\\zork\\data\\items.json");
       initCharacters("src\\zork\\data\\characters.json");
     } catch (Exception e) {
@@ -221,8 +221,10 @@ public class Game {
       for(int i = 0; i < currentInventory.getSize(); i++){
         currentRoom.unlockRoom(direction, currentInventory.getId(i));
       } 
+    } else if(commandWord.equals("hide")) {
+      
+      
     }
-    
     return false;
   }
 
@@ -242,10 +244,7 @@ public class Game {
 
 
   private void endChase(){
-    boolean chase = false;
-    
-    NPC Bob = roomMap.get("Mall3").getNPC().get(0);
-    
+    String bobLast = roomMap.get("Mall3").getNPC().get(0).getLocation();
 
     if(currentRoom.getRoomName().equals("Springfield Mall East Wing")){
      chase = true;
@@ -255,17 +254,25 @@ public class Game {
        System.out.println(npc.talkTo());
      }
     }
-    if(chase){
-      
-        Bob.setLocation(lastRoom.getRoomName());
+
+    
+   
+    if(chase && !currentRoom.getRoomName().equals("Bush")){
+
+     if( currentRoom.checkRoom("Sideshow Bob")||bobLast.equals(currentRoom.getRoomName()))
+     System.out.println("I CAUGHT U");
+      roomMap.get("Mall3").getNPC().get(0).setLocation(lastRoom.getRoomName());
+        System.out.println("\nBOBS LOCATION: " +   roomMap.get("Mall3").getNPC().get(0).getLocation());
+        System.out.println("My Location:" + currentRoom.getRoomName());
+       
+          
         
-        if(Bob.getLocation().equals(currentRoom.getRoomName())){
-          System.out.println("I CAUGHT YOU");
-        }
       
     }
-    System.out.println("\nBOBS LOCATION: " + Bob.getLocation());
-  }
+   
+    }
+    
+  
 
   /**
    * Try to go to one direction. If there is an exit, enter the new room,

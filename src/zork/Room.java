@@ -219,4 +219,14 @@ public class Room {
   public void addNPC (NPC npc) {
     NPCS.add(npc);
   }
+
+  public boolean checkRoom(String Name){
+    for(NPC npc: NPCS){
+      if(npc.getName().equals(Name))
+      return true;
+    }
+    return false; 
+  }
+ 
+  
 }
