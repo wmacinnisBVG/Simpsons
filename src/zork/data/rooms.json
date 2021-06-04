@@ -472,6 +472,7 @@
       "id": "bush1",
       "name": "Bush",
       "description": "A bush",
+      "isDark": false,
       "exits": [
         {
           "isLocked": false,
@@ -485,6 +486,7 @@
       "id": "bush2",
       "name": "Bush",
       "description": "A bush",
+      "isDark": false,
       "exits": [
         {
           "isLocked": false,
@@ -498,6 +500,7 @@
       "id": "bush3",
       "name": "Bush",
       "description": "A bush",
+      "isDark": false,
       "exits": [
         {
           "isLocked": false,
