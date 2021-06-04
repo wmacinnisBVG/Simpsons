@@ -238,6 +238,15 @@ public class Room {
     NPCS.add(npc);
   }
 
+  public boolean checkRoom(String Name){
+    for(NPC npc: NPCS){
+      if(npc.getName().equals(Name))
+      return true;
+    }
+    return false; 
+  }
+ 
+  
   public void setDark(boolean isDark) {
     this.isDark = isDark;
   }
