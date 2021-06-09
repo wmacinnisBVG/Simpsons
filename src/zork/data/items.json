@@ -2,7 +2,7 @@
     "items": [
       {
       "id": "1234",
-      "name": "Keys",
+      "name": "Car Keys",
       "weight": 2,
       "isOpenable": false,
       "isUseable": false,
@@ -18,7 +18,7 @@
       },
       {
       "id": "dollarBill",
-      "name": "Bill",
+      "name": "Dollar Bill",
       "weight": 1,
       "isOpenable": false,
       "isUseable": false,
