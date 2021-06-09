@@ -26,10 +26,10 @@ public class Game {
    */
   public Game() {
     try {
-      initRooms("src\\zork\\data\\rooms.json");
+      initRooms("Simpsons\\src\\zork\\data\\rooms.json");
       currentRoom = roomMap.get("Main-House-TV-Room");
-      initItems("src\\zork\\data\\items.json");
-      initCharacters("src\\zork\\data\\characters.json");
+      initItems("Simpsons\\src\\zork\\data\\items.json");
+      initCharacters("Simpsons\\src\\zork\\data\\characters.json");
     } catch (Exception e) {
       e.printStackTrace();
     }
@@ -167,7 +167,7 @@ public class Game {
       return false;
     }
 
-    String commandWord = command.getCommandWord();
+    String commandWord = command.getCommandWord().toLowerCase();
     if (commandWord.equals("help"))
       printHelp();
     else if (commandWord.equals("go"))
@@ -314,11 +314,13 @@ public class Game {
     String direction = command.getSecondWord();
 
     // Try to leave current room.
-    Room nextRoom = currentRoom.nextRoom(direction);
+    Room nextRoom = currentRoom.nextRoom(direction, currentRoom);
 
     if (nextRoom == null)
       System.out.println("There is no door!");
-    else {
+    else if(nextRoom == currentRoom){
+      currentRoom = nextRoom;
+    }else{
       currentRoom = nextRoom;
       System.out.println(currentRoom.longDescription());
     }

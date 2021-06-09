@@ -10,7 +10,7 @@
       },
       {
       "id": "dollarBill",
-      "name": "Bill",
+      "name": "1 Dollar Bill",
       "weight": 1,
       "isOpenable": false,
       "isUseable": false,

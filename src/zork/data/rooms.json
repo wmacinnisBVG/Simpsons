@@ -126,6 +126,16 @@
           "isLocked": false,
           "direction": "North",
           "adjacentRoom": "Front-Lawn"
+        },
+        {
+          "isLocked": false,
+          "direction": "East",
+          "adjacentRoom": "Ned's-House-3"
+        },
+        {
+          "isLocked": false,
+          "direction": "West",
+          "adjacentRoom": "Ned's-House-1"
         }
       ]
     },
@@ -519,17 +529,17 @@
         
         {
           "isLocked": false,
-          "direction": " PowerPlant",
+          "direction": "PowerPlant",
           "adjacentRoom": "Office2"
         },
         {
           "isLocked": false,
-          "direction": " Store",
+          "direction": "Store",
           "adjacentRoom": "Astore"
         },
         {
           "isLocked": false,
-          "direction": " Mall",
+          "direction": "Mall",
           "adjacentRoom": "Mall2"
         },
         {

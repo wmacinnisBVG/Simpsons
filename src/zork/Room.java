@@ -164,7 +164,7 @@ public class Room {
    * Return the room that is reached if we go from this room in direction
    * "direction". If there is no room in that direction, return null.
    */
-  public Room nextRoom(String direction) {
+  public Room nextRoom(String direction, Room lockedRoom) {
     try {
       for (Exit exit : exits) {
 
@@ -173,9 +173,9 @@ public class Room {
             String adjacentRoom = exit.getAdjacentRoom();
             return Game.roomMap.get(adjacentRoom);
           }
-          System.out.println(exit.getKeyId());
           System.out.println("It's locked so like find some key");
-          return null;
+          //return Game.roomMap.get(getRoomName().toString());
+          return lockedRoom;
         }
 
       }

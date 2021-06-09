@@ -17,7 +17,7 @@ public class Parser {
 
     System.out.print("> "); // print prompt
 
-    inputLine = in.nextLine();
+    inputLine = in.nextLine().toLowerCase();
 
     words = inputLine.split(" "); 
     //This currently works for two words but can be modified to work with three (copy line 28-30), only drawback is that both words 2 and 3 will have to be only one word unlike the command

@@ -41,20 +41,21 @@ public class Inventory {
   }
 */
   public Item removeItem(String item){
-    
+    item = item.toLowerCase();
     //Get Item weight
     for(Item x : items){
-      if(x.getName().equals(item)){
+      if(x.getName().toLowerCase().equals(item)){
         itemWeight  = x.getWeight();
       }
         
     }
 
-    for(int i=0; i< items.size(); i++){
-      if(items.get(i).getName().equals(item))
+    for(int i = 0; i< items.size(); i++){
+      if(items.get(i).getName().toLowerCase().equals(item)){
         currentWeight -= itemWeight; 
         System.out.println("You dropped " + items.get(i).getName() + ".");
         return items.remove(i);
+      }
     }
     return null; 
   }
