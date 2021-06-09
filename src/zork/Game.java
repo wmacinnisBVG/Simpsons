@@ -207,15 +207,16 @@ public class Game {
         System.out.println(npc.talkTo());
       }
     }else if(commandWord.equals("buy")){
-      if(currentRoom.getRoomName().equals("Apu's store") && currentInventory.checkInventory("Bill") ){
+      if(currentRoom.getRoomName().equals("Apu's store") && currentInventory.checkInventory("Dollar Bill") ){
         Item item = currentRoom.takeItem(command.getSecondWord());
       if (item == null)
         System.out.println("Please choose from the three options in the store");
       else
         currentInventory.addItem(item); 
-        //remove bill from inventory
+        System.out.println("Thanks for your purchase bart, I saw some sketchy guy go to the mall you should check it out.");
+        //remove bill from inventory - STILL NEEDS TO BE DONE
       }else{
-        System.out.println("Oh no!, you need to have money to buy something, please come back with the right amount of money\n Hint: check your house for spage change");
+        System.out.println("Oh no!, you need to have money to buy something, please come back with the right amount of money\n Hint: check your house for some spare change");
       }
       
       //here
