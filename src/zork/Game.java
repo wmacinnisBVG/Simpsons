@@ -167,7 +167,7 @@ public class Game {
       return false;
     }
 
-    String commandWord = command.getCommandWord();
+    String commandWord = command.getCommandWord().toLowerCase();
     if (commandWord.equals("help"))
       printHelp();
     else if (commandWord.equals("go"))
@@ -233,6 +233,11 @@ public class Game {
         currentRoom.unlockRoom(direction, currentInventory.getId(i));
       } 
     } else if(commandWord.equals("hide")) {
+      for(Exit x:currentRoom.getExits()){
+        if(x.getAdjacentRoom().equals("bush")){
+          System.out.println("This is true");
+        }
+      }
       
       
         } else if(commandWord.equals("drop")){
@@ -296,12 +301,14 @@ public class Game {
    
     if(chase && !currentRoom.getRoomName().equals("Bush")){
 
-     if( currentRoom.checkRoom("Sideshow Bob")||bobLast.equals(currentRoom.getRoomName()))
+     if( currentRoom.checkRoom("Sideshow Bob")||bobLast.equals(currentRoom.getRoomName())){
      System.out.println("I CAUGHT U");
+
+     System.out.println("You have been caught by sideshow bob");
+     }
       roomMap.get("Mall3").getNPC().get(0).setLocation(lastRoom.getRoomName());
        
           
-        
       
     }
    
@@ -323,11 +330,13 @@ public class Game {
     String direction = command.getSecondWord();
 
     // Try to leave current room.
-    Room nextRoom = currentRoom.nextRoom(direction);
+    Room nextRoom = currentRoom.nextRoom(direction, currentRoom);
 
     if (nextRoom == null)
       System.out.println("There is no door!");
-    else {
+    else if(nextRoom == currentRoom){
+      currentRoom = nextRoom;
+    }else{
       currentRoom = nextRoom;
       System.out.println("\n \n " + currentRoom.longDescription());
     }
