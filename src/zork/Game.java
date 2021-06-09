@@ -91,7 +91,7 @@ public class Game {
       item.setOpen(itemIsOpenable);
       String id = (String) ((JSONObject) roomObj).get("id");
       item.setId(id);
-      boolean itemIsUseable = (boolean) ((JSONObject) roomObj).get ("isUseable");
+      boolean itemIsUseable = (boolean) ((JSONObject) roomObj).get("isUseable");
       item.setUseable(itemIsUseable);
       String roomId = (String) ((JSONObject) roomObj).get("room");
       roomMap.get(roomId).addItem(item);
