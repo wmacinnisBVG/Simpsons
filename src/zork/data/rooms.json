@@ -126,6 +126,16 @@
           "isLocked": false,
           "direction": "North",
           "adjacentRoom": "Front-Lawn"
+        },
+        {
+          "isLocked": false,
+          "direction": "East",
+          "adjacentRoom": "Ned's-House-3"
+        },
+        {
+          "isLocked": false,
+          "direction": "West",
+          "adjacentRoom": "Ned's-House-1"
         }
       ]
     },

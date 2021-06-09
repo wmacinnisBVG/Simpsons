@@ -167,7 +167,7 @@ public class Room {
    * Return the room that is reached if we go from this room in direction
    * "direction". If there is no room in that direction, return null.
    */
-  public Room nextRoom(String direction) {
+  public Room nextRoom(String direction, Room lockedRoom) {
     try {
       for (Exit exit : exits) {
 
