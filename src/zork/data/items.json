@@ -13,6 +13,7 @@
       "name": "Hart",
       "weight": 0,
       "isOpenable": false,
+      "isUseable": false,
       "room": "Main-House-Dining-Room"
       },
       {
