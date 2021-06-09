@@ -37,11 +37,6 @@
       "exits": [
         {
           "isLocked": false,
-          "direction": "North",
-          "adjacentRoom": "Main-House-Backyard"
-        },
-        {
-          "isLocked": false,
           "direction": "South",
           "adjacentRoom": "Main-House-Lobby"
         },
@@ -529,7 +524,7 @@
         
         {
           "isLocked": false,
-          "direction": "PowerPlant",
+          "direction": "Power Plant",
           "adjacentRoom": "Office2"
         },
         {
