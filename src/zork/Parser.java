@@ -24,7 +24,8 @@ public class Parser {
     for(int i = 0; i < commands.getCommandWords().length; i++){
       if(inputLine.indexOf(commands.getCommandWords()[i]) == 0){
         words = new String[2];
-        words[0] = inputLine.substring(0, commands.getCommandWords()[i].length());
+        //words[0] = inputLine.substring(0, commands.getCommandWords()[i].length());
+        words[0] = commands.getCommandWords()[i];
         if(inputLine.length() - words[0].length() > 0){
           words[1] = inputLine.substring(words[0].length() + 1);
         }
