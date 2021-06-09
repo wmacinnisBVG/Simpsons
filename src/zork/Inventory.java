@@ -83,5 +83,14 @@ public class Inventory {
   public String getName(int i) {
     return items.get(i).getName();
   }
+
+  public int findItem(String itemName){
+    for(int i = 0; i < items.size(); i++){
+      if(items.get(i).getName().toLowerCase().equals(itemName.toLowerCase())){
+        return i;
+      }
+    }
+    return -1;
+  }
  
 }

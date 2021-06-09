@@ -214,7 +214,8 @@ public class Game {
       else
         currentInventory.addItem(item); 
         System.out.println("Thanks for your purchase bart, I saw some sketchy guy go to the mall you should check it out.");
-        //remove bill from inventory - STILL NEEDS TO BE DONE
+        
+        currentInventory.removeItem("Dollar Bill");
       }else{
         System.out.println("Oh no!, you need to have money to buy something, please come back with the right amount of money\n Hint: check your house for some spare change");
       }

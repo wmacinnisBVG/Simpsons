@@ -272,14 +272,13 @@
      {
      "id": "Office3",
       "name": "Power Plant",
-      "description": "You are in Mr.Burns office in Springfield Powerplant Station, becareful with what you say",
+      "description": "You are in Mr. Burns office in Springfield Powerplant Station, becareful with what you say",
       "isDark": false,
       "exits": [
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "West",
-          "adjacentRoom": "Office2",
-          "keyId": "1234"
+          "adjacentRoom": "Office2"
         }
       ]
     },
