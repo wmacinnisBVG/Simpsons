@@ -176,8 +176,8 @@ public class Room {
             String adjacentRoom = exit.getAdjacentRoom();
             return Game.roomMap.get(adjacentRoom);
           }
-          System.out.println(exit.getKeyId());
-          System.out.println("\n The area you want to enter appears locked....");
+          //System.out.println(exit.getKeyId());
+          System.out.println("\n The area you want to enter appears locked.... If you have keys use the unlock function.");
           return null;
         }
 

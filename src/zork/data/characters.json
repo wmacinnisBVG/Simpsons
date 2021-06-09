@@ -4,13 +4,13 @@
         "id": "Homer",
         "name": "Homer",
         "location": "Main-House-Living-Room", 
-        "dialogue": "Bart! Doh I've been stabbed. \n Homer dies on the floor."
+        "dialogue": "Bart! Doh I've been stabbed. \n Homer dies on the floor. Go find help, Ned's house is across the street."
       },
       {
         "id": "Ned",
         "name": "Ned",
         "location": "Ned's-House-2",
-        "dialogue": "Hi didly ho Bart! Homers dead? Oh no! I knew my satan sense was tingling. I did see someone walking towards the Kwik-E-Mart down the street. \n Investigate the Kwik-E-Mart using the car."
+        "dialogue": "Hi didly ho Bart! Homers dead? Oh no! I knew my satan sense was tingling. I did see someone walking towards the Kwik-E-Mart down the street. \n Investigate the Kwik-E-Mart using the car in the Simpsons driveway. Homer keeps his car keys in the dining room."
       },
       {
         "id": "Smithers",

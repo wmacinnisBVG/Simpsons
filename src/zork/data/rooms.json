@@ -538,6 +538,13 @@
           "adjacentRoom": "Front-Lawn"
         }
         ]
+    },
+    {
+      "id": "PoliceStation",
+      "name": "Police Station",
+      "description": "The local police station. You have won the game, you reported SideShow bob to the police and you are safe. \n Thanks for playing. Goodbye!",
+      "isDark": false,
+      "exits": []
     }
   ]
 }
