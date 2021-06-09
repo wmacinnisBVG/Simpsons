@@ -232,6 +232,11 @@ public class Game {
         currentRoom.unlockRoom(direction, currentInventory.getId(i));
       } 
     } else if(commandWord.equals("hide")) {
+      for(Exit x:currentRoom.getExits()){
+        if(x.getAdjacentRoom().equals("bush")){
+          System.out.println("This is true");
+        }
+      }
       
       
         } else if(commandWord.equals("drop")){
@@ -295,12 +300,14 @@ public class Game {
    
     if(chase && !currentRoom.getRoomName().equals("Bush")){
 
-     if( currentRoom.checkRoom("Sideshow Bob")||bobLast.equals(currentRoom.getRoomName()))
+     if( currentRoom.checkRoom("Sideshow Bob")||bobLast.equals(currentRoom.getRoomName())){
      System.out.println("I CAUGHT U");
+
+     System.out.println("You have been caught by sideshow bob");
+     }
       roomMap.get("Mall3").getNPC().get(0).setLocation(lastRoom.getRoomName());
        
           
-        
       
     }
    
