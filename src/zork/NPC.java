@@ -55,12 +55,14 @@ public void talk(){
        System.out.println(dialogue);
    }
 */
-   public String talkTo(){
-       
+   public String talkTo(String x){
+    if(x.equalsIgnoreCase(name))   
     return dialogue; 
+    else 
+    return "who?";
    }
 
-  
+   
 
 
 

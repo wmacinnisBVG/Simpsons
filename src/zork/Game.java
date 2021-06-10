@@ -5,6 +5,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import org.json.simple.ItemList;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -171,7 +173,10 @@ public class Game {
     if (commandWord.equals("help"))
       printHelp();
     else if (commandWord.equals("go"))
+    if(!currentRoom.getRoomName().equals("Car"))
       goRoom(command);
+    else
+    System.out.println("Use \"drive to \" to travel in the car");
     else if (commandWord.equals("quit")) {
       if (command.hasSecondWord())
         System.out.println("Quit what?");
@@ -191,21 +196,30 @@ public class Game {
           currentInventory.addItem(item);
           Health.addHealth();
           currentInventory.removeItem(command.getSecondWord());
-        } else {
+        } else if (item.getName().equalsIgnoreCase("Note")){
+            System.out.println("The note reads, \" You need to give the money, do your part and then I will kill homer \n  meet me at the Kwik-E-Mart Store\"");
+
+        }else {
           currentInventory.addItem(item);
         }
          
     } else if(commandWord.equals("inventory")) {
       currentInventory.listInventory();
     }else if(commandWord.equals("talk to")){
+
+      if(command.getSecondWord() == null)
+        System.out.println("\nWho? please enter the character you want to talk to");
+        else{
       for(NPC npc: currentRoom.getNPC()){
 
         if(npc.getName().equals("Apu")){
-          System.out.println(npc.talkTo());
+          System.out.println(npc.talkTo("Apu"));
           System.out.println(" 1. Chips \t$1 \n 2. Soda \t$1 \n 3. Cookie \t$1 \n please select your choice by using the word \"buy\"");
         }else
-        System.out.println(npc.talkTo());
+
+        System.out.println(npc.talkTo(command.getSecondWord()));
       }
+    }
     }else if(commandWord.equals("buy")){
       if(currentRoom.getRoomName().equals("Apu's store") && currentInventory.checkInventory("Dollar Bill") ){
         Item item = currentRoom.takeItem(command.getSecondWord());
@@ -214,6 +228,7 @@ public class Game {
       else
         currentInventory.addItem(item); 
         System.out.println("Thanks for your purchase bart, I saw some sketchy guy go to the mall you should check it out.");
+        currentInventory.removeItem("Dollar Bill");
         //remove bill from inventory - STILL NEEDS TO BE DONE
       }else{
         System.out.println("Oh no!, you need to have money to buy something, please come back with the right amount of money\n Hint: check your house for some spare change");
@@ -277,11 +292,15 @@ public class Game {
    * and a list of the command words.
    */
   private void printHelp() {
+    if(currentRoom.getDark()){
+      System.out.println("\ntry finding a flashlight somewhere and using it in the dark room");
+    }else{
     System.out.println("You are trying to find Homer's killer.");
     System.out.println("Around Springfield.");
     System.out.println();
     System.out.println("Your command words are:");
     parser.showCommands();
+    }
   }
 
 
@@ -293,7 +312,7 @@ public class Game {
      System.out.println(("\n !!!! QUICK Run away from Sideshow bob and report him to the police station as quick as possible !!!"));
 
      for(NPC npc: currentRoom.getNPC()){
-       System.out.println(npc.talkTo());
+       System.out.println(npc.talkTo("SideShow Bob"));
      }
     }
 

@@ -253,9 +253,10 @@
           "adjacentRoom": "Storage2"
         },
         {
-          "isLocked": false,
+          "isLocked": true,
           "direction": "East",
-          "adjacentRoom": "Office3"
+          "adjacentRoom": "Office3",
+          "keyId": "4321"
         },
         {
           "isLocked": false,
@@ -272,14 +273,14 @@
      {
      "id": "Office3",
       "name": "Power Plant",
-      "description": "You are in Mr.Burns office in Springfield Powerplant Station, becareful with what you say",
+      "description": "You are in Mr.Burns office in Springfield Powerplant Station. Mr Burns is not in his office right now, but there seems to be a suspicous note on his desk.",
       "isDark": false,
       "exits": [
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "West",
           "adjacentRoom": "Office2",
-          "keyId": "1234"
+         
         }
       ]
     },
@@ -287,7 +288,7 @@
       "id": "Storage1",
        "name": "Power Plant",
        "description": "You are in a dark storage room, you are surrounded by shelves and odd items",
-       "isDark": false,
+       "isDark": true,
        "exits": [
          {
            "isLocked": false,
@@ -300,7 +301,7 @@
       "id": "Storage2",
        "name": "Power Plant",
        "description": "You are in a dark storage room, you are surrounded by shelves and odd items",
-       "isDark": false,
+       "isDark": true,
        "exits": [
          {
            "isLocked": false,
@@ -323,7 +324,7 @@
       "id": "Storage3",
        "name": "Power Plant",
        "description": "You are in a dark storage room, you are surrounded by shelves and odd items",
-       "isDark": false,
+       "isDark": true,
        "exits": [
          {
            "isLocked": false,
