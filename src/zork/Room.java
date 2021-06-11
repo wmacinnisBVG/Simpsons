@@ -72,8 +72,8 @@ public class Room {
    */
   public String longDescription() {
     if(roomName.equals("Living Room")){
-      return "\n" + description +"\n \nRoom: " + roomName+  "  ||  " + exitString() + "  ||  " + itemString() + "\n" + NPCString() + "\n You see Homer lying in a puddle of blood on the floor. The wound is still fresh, the killer must be close by. Talk to Homer to find out what happened.";
-    } else if(roomName.equals("car")){
+      return "\n" + description +"\n \nRoom: " + roomName+  "  ||  " + exitString() + "  ||  " + itemString() + "\n" + NPCString() + "\n You see Homer lying in a puddle of blood on the floor. The wound is still fresh, the killer must be close by.\n\n However, Ned's Glasses lie on the floor. Homer is still alive, talk to him to find out what happened ";
+    } else if(roomName.equals("Car")){
       return"Hello Bart, you are now in the car. To drive to car, please use the command word \" drive to\" and enter the location you want to reach" + 
       "\n\n" + exitString() ;
     }else if(!isDark){
@@ -145,6 +145,9 @@ public class Room {
       for(Item item : items){
           returnString += item.getName() + ", ";
       }
+      if(returnString.length() >= 2)
+      return returnString.substring(0,returnString.length()-2);
+      else
       return returnString;
   }
 
@@ -177,8 +180,13 @@ public class Room {
             return Game.roomMap.get(adjacentRoom);
           }
           //System.out.println(exit.getKeyId());
+<<<<<<< HEAD
           System.out.println("\n The area you want to enter appears locked.... If you have keys use the unlock function.");
           return lockedRoom;
+=======
+          System.out.println("\n The area you want to enter appears locked.... If you have keys, use the unlock function + the direction of what door you want to unlock.");
+          return null;
+>>>>>>> 11d38f06ecfa208f03785b72d4f741214d3e2adf
         }
 
       }

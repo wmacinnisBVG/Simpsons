@@ -10,13 +10,13 @@
         "id": "Ned",
         "name": "Ned",
         "location": "Ned's-House-2",
-        "dialogue": "Hi didly ho Bart! Homers dead? Oh no! I knew my satan sense was tingling. I did see someone walking towards the Kwik-E-Mart down the street. \n Investigate the Kwik-E-Mart using the car in the Simpsons driveway. Homer keeps his car keys in the dining room."
+        "dialogue": "Hi didly ho Bart! Homers dead? Oh no! I knew my satan sense was tingling. I did see someone walking towards the Power Plant down the street. \n Investigate the Power Plant using the car in the Simpsons driveway. Homer keeps his car keys in the dining room."
       },
       {
         "id": "Smithers",
         "name": "Smithers",
         "location": "Office1",
-        "dialogue": "Hello Bart. What are you doing here? Homers dead?"
+        "dialogue": "Hello Bart. What are you doing here? What?....Homers dead? Oh no! Mr.Burns must know something about this, he has hated Homer ever since he got here.\n\n Maybe u can sneak into his office to find some clues. You can probably find keys to his office in the janitors closet "
 
       },
       {

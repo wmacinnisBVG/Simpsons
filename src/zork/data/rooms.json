@@ -253,9 +253,10 @@
           "adjacentRoom": "Storage2"
         },
         {
-          "isLocked": false,
+          "isLocked": true,
           "direction": "East",
-          "adjacentRoom": "Office3"
+          "adjacentRoom": "Office3",
+          "keyId": "4321"
         },
         {
           "isLocked": false,
@@ -272,13 +273,22 @@
      {
      "id": "Office3",
       "name": "Power Plant",
+<<<<<<< HEAD
       "description": "You are in Mr. Burns office in Springfield Powerplant Station, becareful with what you say",
+=======
+      "description": "You are in Mr.Burns office in Springfield Powerplant Station. Mr Burns is not in his office right now, but there seems to be a suspicous note on his desk.",
+>>>>>>> 11d38f06ecfa208f03785b72d4f741214d3e2adf
       "isDark": false,
       "exits": [
         {
           "isLocked": false,
           "direction": "West",
+<<<<<<< HEAD
           "adjacentRoom": "Office2"
+=======
+          "adjacentRoom": "Office2",
+         
+>>>>>>> 11d38f06ecfa208f03785b72d4f741214d3e2adf
         }
       ]
     },
@@ -286,7 +296,7 @@
       "id": "Storage1",
        "name": "Power Plant",
        "description": "You are in a dark storage room, you are surrounded by shelves and odd items",
-       "isDark": false,
+       "isDark": true,
        "exits": [
          {
            "isLocked": false,
@@ -299,7 +309,7 @@
       "id": "Storage2",
        "name": "Power Plant",
        "description": "You are in a dark storage room, you are surrounded by shelves and odd items",
-       "isDark": false,
+       "isDark": true,
        "exits": [
          {
            "isLocked": false,
@@ -322,7 +332,7 @@
       "id": "Storage3",
        "name": "Power Plant",
        "description": "You are in a dark storage room, you are surrounded by shelves and odd items",
-       "isDark": false,
+       "isDark": true,
        "exits": [
          {
            "isLocked": false,
@@ -352,7 +362,7 @@
     {
       "id": "Path2",
       "name": "Path",
-      "description": "A path leading somewhere.",
+      "description": "A path leading somewhere. There appears to be bushes on the side of the path you can hide in choose which way you go wisely",
       "isDark": false,
       "exits": [
         {
@@ -380,7 +390,7 @@
     {
       "id": "PathX",
       "name": "Deadend",
-      "description": "A dead end.",
+      "description": "Oh no! you have reached a dead end",
       "isDark": false,
       "exits": [
         {
@@ -411,7 +421,7 @@
     {
       "id": "Path4",
       "name": "Path leading to police station",
-      "description": "A path leading somewhere.",
+      "description": "A path leading somewhere. You notice more bushes on the side of the path",
       "isDark": false,
       "exits": [
         {
@@ -434,7 +444,7 @@
     {
       "id": "Path5",
       "name": "Deep Path",
-      "description": "A path leading somewhere.",
+      "description": "A path leading somewhere. There are even more bushes",
       "isDark": false,
       "exits": [
         {
@@ -457,7 +467,7 @@
     {
       "id": "Path6",
       "name": "Path Exit",
-      "description": "A path leading somewhere.",
+      "description": "A path leading somewhere. Youcan see the police station",
       "isDark": false,
       "exits": [
         {
