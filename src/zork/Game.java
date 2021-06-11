@@ -6,7 +6,7 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import org.json.simple.ItemList;
+//import org.json.simple.ItemList;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -232,13 +232,13 @@ public class Game {
     }else if(commandWord.equals("buy")){
       if(currentRoom.getRoomName().equals("Apu's store") && currentInventory.checkInventory("Dollar Bill") ){
         Item item = currentRoom.takeItem(command.getSecondWord());
-      if (item == null)
-        System.out.println("Please choose from the three options in the store");
-      else
-        currentInventory.addItem(item); 
-        System.out.println("Thanks for your purchase bart, I saw some sketchy guy go to the mall you should check it out.");
-        currentInventory.removeItem("Dollar Bill");
-        //remove bill from inventory - STILL NEEDS TO BE DONE
+        if(item != null){
+          currentInventory.addItem(item); 
+          System.out.println("Thanks for your purchase, Bart. I saw some sketchy guy go to the mall, you should check it out.");
+          currentInventory.removeItem("Dollar Bill");
+        }else{
+          System.out.println("Please choose from the three options in the store");
+        }
       }else{
         System.out.println("Oh no!, you need to have money to buy something, please come back with the right amount of money\n Hint: check your house for some spare change");
       }

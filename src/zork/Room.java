@@ -122,7 +122,7 @@ public class Room {
    
     for (int i =0; i<items.size(); i++){
       if (items.get(i).getName().equalsIgnoreCase(item)){
-        System.out.println("\n You picked up " + items.get(i).getName() + ".");
+        System.out.println("\nYou picked up " + items.get(i).getName() + ".");
         return items.remove(i);
       }
     }
