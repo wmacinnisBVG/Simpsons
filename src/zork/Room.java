@@ -127,7 +127,7 @@ public class Room {
    
     for (int i =0; i<items.size(); i++){
       if (items.get(i).getName().equalsIgnoreCase(item)){
-        System.out.println("\n You picked up " + items.get(i).getName() + ".");
+        System.out.println("\nYou picked up " + items.get(i).getName() + ".");
         return items.remove(i);
       }
     }
@@ -185,9 +185,9 @@ public class Room {
             String adjacentRoom = exit.getAdjacentRoom();
             return Game.roomMap.get(adjacentRoom);
           }
-
-          System.out.println("\n The area you want to enter appears locked.... If you have keys, use the unlock function + the direction of what door you want to unlock.");
-          return null;
+          
+          System.out.println("\n The area you want to enter appears locked.... If you have keys use the unlock function + the direction of what door you want to unlock.");
+          return lockedRoom;
         }
 
       }

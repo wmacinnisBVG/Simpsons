@@ -6,7 +6,7 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import org.json.simple.ItemList;
+//import org.json.simple.ItemList;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -234,13 +234,13 @@ public class Game {
     }else if(commandWord.equals("buy")){
       if(currentRoom.getRoomName().equals("Apu's store") && currentInventory.checkInventory("Dollar Bill") ){
         Item item = currentRoom.takeItem(command.getSecondWord());
-      if (item == null)
-        System.out.println("Please choose from the three options in the store");
-      else
-        currentInventory.addItem(item); 
-        System.out.println("Thanks for your purchase bart. I saw some sketchy guy go to the mall, you should check it out.");
-        
-        currentInventory.removeItem("Dollar Bill"); //Takes payment in the form of the dollar bill
+        if(item != null){
+          currentInventory.addItem(item); 
+          System.out.println("Thanks for your purchase, Bart. I saw some sketchy guy go to the mall, you should check it out.");
+          currentInventory.removeItem("Dollar Bill");
+        }else{
+          System.out.println("Please choose from the three options in the store");
+        }
       }else{
         System.out.println("Oh no!, you need to have money to buy something, please come back with the right amount of money\n Hint: check your house for some spare change");
       }
@@ -299,7 +299,7 @@ public class Game {
     if(currentRoom.getDark()){
       System.out.println("\ntry finding a flashlight somewhere and using it in the dark room");
     }else if(chase){
-        System.out.println("Be careful of what inputs you type, one mistake can lead to Sideshow Bob catching you. Make sure you also make sure you follow the path and don't fall into dead ends ")
+        System.out.println("Be careful of what inputs you type, one mistake can lead to Sideshow Bob catching you. Make sure you also make sure you follow the path and don't fall into dead ends ");
     }else{
     System.out.println("You are trying to find Homer's killer.");
     System.out.println("Around Springfield.");

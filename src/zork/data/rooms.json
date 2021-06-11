@@ -273,22 +273,13 @@
      {
      "id": "Office3",
       "name": "Power Plant",
-<<<<<<< HEAD
-      "description": "You are in Mr. Burns office in Springfield Powerplant Station, becareful with what you say",
-=======
       "description": "You are in Mr.Burns office in Springfield Powerplant Station. Mr Burns is not in his office right now, but there seems to be a suspicous note on his desk.",
->>>>>>> 11d38f06ecfa208f03785b72d4f741214d3e2adf
       "isDark": false,
       "exits": [
         {
           "isLocked": false,
           "direction": "West",
-<<<<<<< HEAD
           "adjacentRoom": "Office2"
-=======
-          "adjacentRoom": "Office2",
-         
->>>>>>> 11d38f06ecfa208f03785b72d4f741214d3e2adf
         }
       ]
     },

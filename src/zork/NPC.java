@@ -50,11 +50,11 @@ public String getDialogue() {
 public void setDialogue(String dialogue){
     this.dialogue = dialogue;
 }
-/*
-public void talk(){
-       System.out.println(dialogue);
-   }
-*/
+/**
+ *  Returns the dialogue of the character
+ * @param x takes the second of word of command and sees if the name matches with the name of the character
+ * @returns  who if the name does not match
+ */
    public String talkTo(String x){
     if(x.equalsIgnoreCase(name))   
     return dialogue; 
