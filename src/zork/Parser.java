@@ -21,6 +21,7 @@ public class Parser {
 
     words = inputLine.split(" "); 
     //This currently works for two words but can be modified to work with three (copy line 28-30), only drawback is that both words 2 and 3 will have to be only one word unlike the command
+    //This command works by parsing through the list of available commands, and attempting to match the first word to a command. By doing this, commands with multiple words (e.g. pick up) can be used, and can also have arguments with two words (e.g. dollar bill)
     for(int i = 0; i < commands.getCommandWords().length; i++){
       if(inputLine.indexOf(commands.getCommandWords()[i]) == 0){
         words = new String[2];

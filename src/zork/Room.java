@@ -190,7 +190,11 @@ public class Room {
     System.out.println(direction + " is not a valid direction.");
     return null;
   }
-
+  /**
+   * Tries to unlock the room given a specific direction. Will first match an exit to the direction, and then for that exit will see if the keyId is equal to the id of any item in the players inventory.
+   * @param direction
+   * @param id
+   */
   public void unlockRoom(String direction, String id) {
     try {
       for (Exit exit : exits) {
@@ -199,7 +203,7 @@ public class Room {
           if (exit.isLocked){
             if (exit.keyId.equals(id)){
               exit.isLocked = false;
-              System.out.println("Door unlocked");
+              System.out.println("You managed to unlock the door. \n");
             }
           }
         }
