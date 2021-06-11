@@ -1,7 +1,6 @@
 {
   "items": [
     {
-<<<<<<< HEAD
     "id": "1234",
     "name": "Car Keys",
     "weight": 2,
@@ -42,142 +41,12 @@
     },
     {
       "name": "Cookie",
-=======
-      "id": "1234",
-      "name": "Car Keys",
-      "weight": 2,
-      "isOpenable": false,
-      "isUseable": false,
-      "room": "Main-House-Dining-Room"
-    },
-    {
-      "id": "4321",
-      "name": "Office Keys",
-      "weight": 1,
-      "isOpenable": false,
-      "isUseable": false,
-      "room": "Storage3"
-    },
-    {
-      "id": "note",
-      "name": "Note",
-      "weight": 1,
-      "isOpenable": false,
-      "isUseable": false,
-      "room": "Office3" 
-      },
-      {
-        "id": "glasses",
-        "name": "Ned's Glasses",
-        "weight": 1,
-        "isOpenable": false,
-        "isUseable": false,
-        "room": "Main-House-Living-Room" 
-        },
-    {
-      "id": "Mop",
-      "name": "Big Mop",
-      "weight": 5,
-      "isOpenable": false,
-      "isUseable": false,
-      "room": "Storage3"
-    },
-    {
-      "id": "Bleach",
-      "name": "Bleach",
-      "weight": 2,
-      "isOpenable": false,
-      "isUseable": false,
-      "room": "Storage2"
-    },
-    {
-      "id": "Rags",
-      "name": "Old Rags",
-      "weight": 1,
-      "isOpenable": false,
-      "isUseable": false,
-      "room": "Storage1"
-    },
-    {
-      "id": "socks",
-      "name": "Old Socks",
-      "weight": 1,
-      "isOpenable": false,
-      "isUseable": false,
-      "room": "Storage2"
-    },
-    {
-      "id": "Can",
-      "name": "Trash Can",
-      "weight": 4,
-      "isOpenable": false,
-      "isUseable": false,
-      "room": "Storage3"
-    },
-    {
-      "id": "alcohol",
-      "name": "Cleaning alcohol",
-      "weight": 1,
-      "isOpenable": false,
-      "isUseable": false,
-      "room": "Storage1" 
-      },
-      {
-        "id": "Bags",
-        "name": "Garbage Bag",
-        "weight": 1,
-        "isOpenable": false,
-        "isUseable": false,
-        "room": "Storage1" 
-        },
-    {
-      "id": "hart1",
-      "name": "Hart",
-      "weight": 0,
-      "isOpenable": false,
-      "isUseable": false,
-      "room": "Main-House-Dining-Room"
-    },
-    {
-      "id": "dollarBill",
-      "name": "Dollar Bill",
-      "weight": 1,
-      "isOpenable": false,
-      "isUseable": false,
-      "room": "Main-House-Kitchen"
-    },
-    {
-      "id": "bloodyKnife",
-      "name": "Bloody Knife",
-      "weight": 5,
-      "isOpenable": false,
-      "isUseable": false,
-      "room": "Main-House-Living-Room"
-    },
-    {
-      "name": "Chips",
       "weight": 1,
       "isOpenable": false,
       "isUseable": false,
       "room": "Astore"
     },
     {
-      "name": "Cookie",
-      "weight": 1,
-      "isOpenable": false,
-      "isUseable": false,
-      "room": "Astore"
-    },
-    {
-      "name": "Soda",
->>>>>>> 11d38f06ecfa208f03785b72d4f741214d3e2adf
-      "weight": 1,
-      "isOpenable": false,
-      "isUseable": false,
-      "room": "Astore"
-    },
-    {
-<<<<<<< HEAD
     "name": "Soda",
     "weight": 1,
     "isOpenable": false,
@@ -193,14 +62,4 @@
     "room": "Main-House-TV-Room"    
     }
   ] 
-=======
-      "id": "torch",
-      "name": "Flashlight",
-      "weight": 1,
-      "isOpenable": false,
-      "isUseable": false,
-      "room": "Main-House-TV-Room"
-    }
-  ]
->>>>>>> 11d38f06ecfa208f03785b72d4f741214d3e2adf
 }

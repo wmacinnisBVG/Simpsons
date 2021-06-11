@@ -222,13 +222,8 @@ public class Game {
       for(NPC npc: currentRoom.getNPC()){
         if(npc.getName().toLowerCase().equals(command.getSecondWord().toLowerCase()));
         if(npc.getName().equals("Apu")){
-<<<<<<< HEAD
-          System.out.println(npc.talkTo());
-          System.out.println(" 1. Chips \t$1 \n 2. Soda \t$1 \n 3. Cookie \t$1 \n please select your choice by using the word \"buy\""); // Purchasing items from Apu, lists out items
-=======
           System.out.println(npc.talkTo("Apu"));
           System.out.println(" 1. Chips \t$1 \n 2. Soda \t$1 \n 3. Cookie \t$1 \n please select your choice by using the word \"buy\"");
->>>>>>> 11d38f06ecfa208f03785b72d4f741214d3e2adf
         }else
 
         System.out.println(npc.talkTo(command.getSecondWord()));
@@ -241,15 +236,9 @@ public class Game {
         System.out.println("Please choose from the three options in the store");
       else
         currentInventory.addItem(item); 
-<<<<<<< HEAD
-        System.out.println("Thanks for your purchase bart. I saw some sketchy guy go to the mall, you should check it out.");
-        
-        currentInventory.removeItem("Dollar Bill"); //Takes payment in the form of the dollar bill
-=======
         System.out.println("Thanks for your purchase bart, I saw some sketchy guy go to the mall you should check it out.");
         currentInventory.removeItem("Dollar Bill");
         //remove bill from inventory - STILL NEEDS TO BE DONE
->>>>>>> 11d38f06ecfa208f03785b72d4f741214d3e2adf
       }else{
         System.out.println("Oh no!, you need to have money to buy something, please come back with the right amount of money\n Hint: check your house for some spare change");
       }
@@ -308,7 +297,7 @@ public class Game {
     if(currentRoom.getDark()){
       System.out.println("\ntry finding a flashlight somewhere and using it in the dark room");
     }else if(chase){
-        System.out.println("Be careful of what inputs you type, one mistake can lead to Sideshow Bob catching you. Make sure you also make sure you follow the path and don't fall into dead ends ")
+        System.out.println("Be careful of what inputs you type, one mistake can lead to Sideshow Bob catching you. Make sure you also make sure you follow the path and don't fall into dead ends ");
     }else{
     System.out.println("You are trying to find Homer's killer.");
     System.out.println("Around Springfield.");

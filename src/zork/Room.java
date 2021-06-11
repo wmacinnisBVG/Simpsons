@@ -180,13 +180,8 @@ public class Room {
             return Game.roomMap.get(adjacentRoom);
           }
           //System.out.println(exit.getKeyId());
-<<<<<<< HEAD
-          System.out.println("\n The area you want to enter appears locked.... If you have keys use the unlock function.");
+          System.out.println("\n The area you want to enter appears locked.... If you have keys use the unlock function + the direction of what door you want to unlock.");
           return lockedRoom;
-=======
-          System.out.println("\n The area you want to enter appears locked.... If you have keys, use the unlock function + the direction of what door you want to unlock.");
-          return null;
->>>>>>> 11d38f06ecfa208f03785b72d4f741214d3e2adf
         }
 
       }
