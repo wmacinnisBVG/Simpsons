@@ -1,57 +1,57 @@
 {
-    "items": [
-      {
-      "id": "1234",
-      "name": "Car Keys",
-      "weight": 2,
-      "isOpenable": false,
-      "isUseable": false,
-      "room": "Main-House-Dining-Room" 
-      },
-      {
-      "id": "hart1",
-      "name": "Hart",
-      "weight": 0,
-      "isOpenable": false,
-      "isUseable": false,
-      "room": "Main-House-Dining-Room"
-      },
-      {
-      "id": "dollarBill",
-      "name": "Dollar Bill",
-      "weight": 1,
-      "isOpenable": false,
-      "isUseable": false,
-      "room": "Main-House-Kitchen"
-      },
-      {
-      "id": "bloodyKnife",
-      "name": "Bloody Knife",
-      "weight": 5,
-      "isOpenable": false,
-      "isUseable": false,
-      "room": "Main-House-Living-Room" 
-      },
-      {
-        "name": "Chips",
-        "weight": 1,
-        "isOpenable": false,
-        "isUseable": false,
-        "room": "Astore" 
-      },
-     {
-          "name": "Cookie",
-          "weight": 1,
-          "isOpenable": false,
-          "isUseable": false,
-          "room": "Astore" 
-     },
-     {
-      "name": "Soda",
+  "items": [
+    {
+    "id": "1234",
+    "name": "Car Keys",
+    "weight": 2,
+    "isOpenable": false,
+    "isUseable": false,
+    "room": "Main-House-Dining-Room" 
+    },
+    {
+    "id": "hart1",
+    "name": "Hart",
+    "weight": 0,
+    "isOpenable": false,
+    "isUseable": false,
+    "room": "Main-House-Dining-Room"
+    },
+    {
+    "id": "dollarBill",
+    "name": "Dollar Bill",
+    "weight": 1,
+    "isOpenable": false,
+    "isUseable": false,
+    "room": "Main-House-Kitchen"
+    },
+    {
+    "id": "bloodyKnife",
+    "name": "Bloody Knife",
+    "weight": 5,
+    "isOpenable": false,
+    "isUseable": false,
+    "room": "Main-House-Living-Room" 
+    },
+    {
+      "name": "Chips",
       "weight": 1,
       "isOpenable": false,
       "isUseable": false,
       "room": "Astore" 
+    },
+    {
+      "name": "Cookie",
+      "weight": 1,
+      "isOpenable": false,
+      "isUseable": false,
+      "room": "Astore" 
+    },
+    {
+    "name": "Soda",
+    "weight": 1,
+    "isOpenable": false,
+    "isUseable": false,
+    "room": "Astore" 
     },
     {
     "id": "torch",
@@ -61,5 +61,5 @@
     "isUseable": false,
     "room": "Main-House-TV-Room"    
     }
-] 
+  ] 
 }

@@ -1,10 +1,13 @@
 package zork;
-
+/**
+ * Damage system. Can take damage from various sources.
+ */
 public class Health {
     private static int harts = 3;
     public int getHarts(){
         return harts;
     }
+
     public void takeDamage(){
         harts -= 1;
         if(harts <= 0){

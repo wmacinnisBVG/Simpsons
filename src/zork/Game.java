@@ -36,7 +36,9 @@ public class Game {
     }
     parser = new Parser();
   }
-
+  /**
+   * Takes rooms.json file and brings all rooms into the game
+   */
   private void initRooms(String fileName) throws Exception {
     Path path = Path.of(fileName);
     String jsonString = Files.readString(path);
@@ -100,6 +102,9 @@ public class Game {
     
 
   }
+  /**
+   * Takes characters.json file and brings all the characters into the game
+   */
   private void initCharacters(String fileName) throws Exception {
     Path path = Path.of(fileName);
     String jsonString = Files.readString(path);
@@ -199,10 +204,10 @@ public class Game {
       currentInventory.listInventory();
     }else if(commandWord.equals("talk to")){
       for(NPC npc: currentRoom.getNPC()){
-
+        if(npc.getName().toLowerCase().equals(command.getSecondWord().toLowerCase()));
         if(npc.getName().equals("Apu")){
           System.out.println(npc.talkTo());
-          System.out.println(" 1. Chips \t$1 \n 2. Soda \t$1 \n 3. Cookie \t$1 \n please select your choice by using the word \"buy\"");
+          System.out.println(" 1. Chips \t$1 \n 2. Soda \t$1 \n 3. Cookie \t$1 \n please select your choice by using the word \"buy\""); // Purchasing items from Apu, lists out items
         }else
         System.out.println(npc.talkTo());
       }
@@ -213,15 +218,15 @@ public class Game {
         System.out.println("Please choose from the three options in the store");
       else
         currentInventory.addItem(item); 
-        System.out.println("Thanks for your purchase bart, I saw some sketchy guy go to the mall you should check it out.");
+        System.out.println("Thanks for your purchase bart. I saw some sketchy guy go to the mall, you should check it out.");
         
-        currentInventory.removeItem("Dollar Bill");
+        currentInventory.removeItem("Dollar Bill"); //Takes payment in the form of the dollar bill
       }else{
         System.out.println("Oh no!, you need to have money to buy something, please come back with the right amount of money\n Hint: check your house for some spare change");
       }
       
       //here
-    }else if(commandWord.equals("drive to")){
+    }else if(commandWord.equals("drive to")){ //Alternate command for go, makes it more grammatically correct
       if(currentRoom.getRoomName().equals("Car"))
       goRoom(command);
       else{
@@ -230,7 +235,7 @@ public class Game {
       //here
     }else if(commandWord.equals("unlock")){
       String direction = command.getSecondWord();
-      for(int i = 0; i < currentInventory.getSize(); i++){
+      for(int i = 0; i < currentInventory.getSize(); i++){ //Checks to see if any of the items currently in the inventory will unlock the door at direction
         currentRoom.unlockRoom(direction, currentInventory.getId(i));
       } 
     } else if(commandWord.equals("hide")) {
@@ -285,7 +290,10 @@ public class Game {
     parser.showCommands();
   }
 
-
+  /**
+   * The final chase sequence upon entering the mall
+   * Sideshow Bob will chase you around the mall. If you make a wrong step, you lose and the game is over.
+   */
   private void endChase(){
     String bobLast = roomMap.get("Mall3").getNPC().get(0).getLocation();
 
@@ -330,7 +338,7 @@ public class Game {
 
     String direction = command.getSecondWord();
 
-    // Try to leave current room.
+    // Try to leave current room. Passes currentRoom so that if player runs into a locked door, it does not return null and instead goes to the else if statement. 
     Room nextRoom = currentRoom.nextRoom(direction, currentRoom);
 
     if (nextRoom == null)
