@@ -354,7 +354,7 @@
     {
       "id": "Path2",
       "name": "Path",
-      "description": "A path leading somewhere.",
+      "description": "A path leading somewhere. There appears to be bushes on the side of the path you can hide in choose which way you go wisely",
       "isDark": false,
       "exits": [
         {
@@ -382,7 +382,7 @@
     {
       "id": "PathX",
       "name": "Deadend",
-      "description": "A dead end.",
+      "description": "Oh no! you have reached a dead end",
       "isDark": false,
       "exits": [
         {
@@ -413,7 +413,7 @@
     {
       "id": "Path4",
       "name": "Path leading to police station",
-      "description": "A path leading somewhere.",
+      "description": "A path leading somewhere. You notice more bushes on the side of the path",
       "isDark": false,
       "exits": [
         {
@@ -436,7 +436,7 @@
     {
       "id": "Path5",
       "name": "Deep Path",
-      "description": "A path leading somewhere.",
+      "description": "A path leading somewhere. There are even more bushes",
       "isDark": false,
       "exits": [
         {
@@ -459,7 +459,7 @@
     {
       "id": "Path6",
       "name": "Path Exit",
-      "description": "A path leading somewhere.",
+      "description": "A path leading somewhere. Youcan see the police station",
       "isDark": false,
       "exits": [
         {

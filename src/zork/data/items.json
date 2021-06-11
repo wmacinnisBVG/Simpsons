@@ -24,6 +24,14 @@
       "isUseable": false,
       "room": "Office3" 
       },
+      {
+        "id": "glasses",
+        "name": "Ned's Glasses",
+        "weight": 1,
+        "isOpenable": false,
+        "isUseable": false,
+        "room": "Main-House-Living-Room" 
+        },
     {
       "id": "Mop",
       "name": "Big Mop",

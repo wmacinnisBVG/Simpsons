@@ -21,6 +21,7 @@ public class Game {
   private Inventory currentInventory = new Inventory(10);
   public Health harts = new Health();
   private boolean chase;
+  boolean finished = false;
   
 
   public ArrayList<Item> gameItems = new ArrayList<Item>();
@@ -30,7 +31,7 @@ public class Game {
   public Game() {
     try {
       initRooms("src\\zork\\data\\rooms.json");
-      currentRoom = roomMap.get("Main-House-TV-Room");
+      currentRoom = roomMap.get("Mall2");
       initItems("src\\zork\\data\\items.json");
       initCharacters("src\\zork\\data\\characters.json");
     } catch (Exception e) {
@@ -129,7 +130,7 @@ public class Game {
   public void play() {
     printWelcome();
    
-    boolean finished = false;
+    
     while (!finished) {
       Command command;
       lastRoom = currentRoom;
@@ -141,6 +142,9 @@ public class Game {
         e.printStackTrace();
       }
       endChase();
+     
+      
+    
     }
     System.out.println("Thank you for playing.  Good bye.");
   }
@@ -247,13 +251,6 @@ public class Game {
       for(int i = 0; i < currentInventory.getSize(); i++){
         currentRoom.unlockRoom(direction, currentInventory.getId(i));
       } 
-    } else if(commandWord.equals("hide")) {
-      for(Exit x:currentRoom.getExits()){
-        if(x.getAdjacentRoom().equals("bush")){
-          System.out.println("This is true");
-        }
-      }
-      
       
         } else if(commandWord.equals("drop")){
 
@@ -294,6 +291,8 @@ public class Game {
   private void printHelp() {
     if(currentRoom.getDark()){
       System.out.println("\ntry finding a flashlight somewhere and using it in the dark room");
+    }else if(chase){
+        System.out.println("Be careful of what inputs you type, one mistake can lead to Sideshow Bob catching you. Make sure you also make sure you follow the path and don't fall into dead ends ")
     }else{
     System.out.println("You are trying to find Homer's killer.");
     System.out.println("Around Springfield.");
@@ -305,31 +304,38 @@ public class Game {
 
 
   private void endChase(){
-    String bobLast = roomMap.get("Mall3").getNPC().get(0).getLocation();
-
+    //String bobLast = roomMap.get("Mall3").getNPC().get(0).getLocation();
+    String bobLast = lastRoom.getRoomName();
     if(currentRoom.getRoomName().equals("Springfield Mall East Wing")){
      chase = true;
-     System.out.println(("\n !!!! QUICK Run away from Sideshow bob and report him to the police station as quick as possible !!!"));
+     System.out.println(("\n !!!! QUICK, Run away from Sideshow bob and report him to the police station as quick as possible !!! \n \n There is a path south of the mall that leads to the police station... make your decisions quick or Sideshow Bob will catch you\n\n"));
 
      for(NPC npc: currentRoom.getNPC()){
-       System.out.println(npc.talkTo("SideShow Bob"));
+       System.out.println("SideShow Bob:" + npc.talkTo("SideShow Bob"));
      }
-    }
 
+     
+
+  }
     
-   
-    if(chase && !currentRoom.getRoomName().equals("Bush")){
+    if(chase && !currentRoom.getRoomName().equals("Bush")&& !currentRoom.getRoomName().equals("Springfield Mall East Wing")){
+     
+      
+     if( currentRoom.checkRoom("Sideshow Bob")||bobLast.equals(currentRoom.getRoomName())|| currentRoom.getRoomName().equals("Car")){
+     System.out.println("Sideshow Bob: I CAUGHT YOU, now no one will know I killed homer\n\n Unfortunately, you took the wrong path and Sideshow Bob has caught you and will kill you, try again next time");
 
-     if( currentRoom.checkRoom("Sideshow Bob")||bobLast.equals(currentRoom.getRoomName())){
-     System.out.println("I CAUGHT U");
+     
+     finished = true; 
+     }else if(currentRoom.getRoomName().equals("Police Station")){
 
-     System.out.println("You have been caught by sideshow bob");
+       finished = true; 
      }
-      roomMap.get("Mall3").getNPC().get(0).setLocation(lastRoom.getRoomName());
+      
        
           
       
     }
+    
    
     }
     
