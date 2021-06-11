@@ -31,7 +31,7 @@ public class Game {
   public Game() {
     try {
       initRooms("src\\zork\\data\\rooms.json");
-      currentRoom = roomMap.get("Mall2");
+      currentRoom = roomMap.get("Main-House-TV-Room");
       initItems("src\\zork\\data\\items.json");
       initCharacters("src\\zork\\data\\characters.json");
     } catch (Exception e) {
@@ -41,6 +41,8 @@ public class Game {
   }
   /**
    * Takes rooms.json file and brings all rooms into the game
+   * Grabs all attributes from rooms.json 
+   * 
    */
   private void initRooms(String fileName) throws Exception {
     Path path = Path.of(fileName);
@@ -155,7 +157,7 @@ public class Game {
   }
 
   /**
-   * Print out the opening message for the player.
+   * Print out the opening message for the player.    
    */
   private void printWelcome() {
     System.out.println("The Simpsons");
@@ -222,13 +224,8 @@ public class Game {
       for(NPC npc: currentRoom.getNPC()){
         if(npc.getName().toLowerCase().equals(command.getSecondWord().toLowerCase()));
         if(npc.getName().equals("Apu")){
-<<<<<<< HEAD
-          System.out.println(npc.talkTo());
-          System.out.println(" 1. Chips \t$1 \n 2. Soda \t$1 \n 3. Cookie \t$1 \n please select your choice by using the word \"buy\""); // Purchasing items from Apu, lists out items
-=======
           System.out.println(npc.talkTo("Apu"));
           System.out.println(" 1. Chips \t$1 \n 2. Soda \t$1 \n 3. Cookie \t$1 \n please select your choice by using the word \"buy\"");
->>>>>>> 11d38f06ecfa208f03785b72d4f741214d3e2adf
         }else
 
         System.out.println(npc.talkTo(command.getSecondWord()));
@@ -241,20 +238,14 @@ public class Game {
         System.out.println("Please choose from the three options in the store");
       else
         currentInventory.addItem(item); 
-<<<<<<< HEAD
         System.out.println("Thanks for your purchase bart. I saw some sketchy guy go to the mall, you should check it out.");
         
         currentInventory.removeItem("Dollar Bill"); //Takes payment in the form of the dollar bill
-=======
-        System.out.println("Thanks for your purchase bart, I saw some sketchy guy go to the mall you should check it out.");
-        currentInventory.removeItem("Dollar Bill");
-        //remove bill from inventory - STILL NEEDS TO BE DONE
->>>>>>> 11d38f06ecfa208f03785b72d4f741214d3e2adf
       }else{
         System.out.println("Oh no!, you need to have money to buy something, please come back with the right amount of money\n Hint: check your house for some spare change");
       }
       
-      //here
+      //drive to is only used when in the car
     }else if(commandWord.equals("drive to")){ //Alternate command for go, makes it more grammatically correct
       if(currentRoom.getRoomName().equals("Car"))
       goRoom(command);
@@ -321,9 +312,12 @@ public class Game {
   /**
    * The final chase sequence upon entering the mall
    * Sideshow Bob will chase you around the mall. If you make a wrong step, you lose and the game is over.
+   *  The method uses the global variable lastRoom which is assigned the value of currentRoom before currentRoom is updated with command
+   * the method will only start CHASING when the player enters mall3 and exits the player cannot be caught when the player is in
+   * a bush or in the original chase point
+   * if the player reaches the police station - the player wins
    */
   private void endChase(){
-    //String bobLast = roomMap.get("Mall3").getNPC().get(0).getLocation();
     String bobLast = lastRoom.getRoomName();
     if(currentRoom.getRoomName().equals("Springfield Mall East Wing")){
      chase = true;

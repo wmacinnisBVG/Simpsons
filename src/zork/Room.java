@@ -69,6 +69,11 @@ public class Room {
   /**
    * Return a long description of this room, on the form: You are in the kitchen.
    * Exits: north west
+   * Also takes in special exceptions like the Living room - which is where the murder mystery starts
+   *  the car, since the new command "drive to" needs to be explained
+   * and when a room is dark, so that no information is given to the player when a room is dark
+   * 
+   * 
    */
   public String longDescription() {
     if(roomName.equals("Living Room")){
@@ -144,7 +149,8 @@ public class Room {
     }
       for(Item item : items){
           returnString += item.getName() + ", ";
-      }
+      }//the substring is used only to remove the last comma that is usually placed at the end of a list using this method
+      // for example: it used to show up like items: x,y,z, the substring is used to remove the last comma to make it: x,y,z
       if(returnString.length() >= 2)
       return returnString.substring(0,returnString.length()-2);
       else
@@ -179,14 +185,9 @@ public class Room {
             String adjacentRoom = exit.getAdjacentRoom();
             return Game.roomMap.get(adjacentRoom);
           }
-          //System.out.println(exit.getKeyId());
-<<<<<<< HEAD
-          System.out.println("\n The area you want to enter appears locked.... If you have keys use the unlock function.");
-          return lockedRoom;
-=======
+
           System.out.println("\n The area you want to enter appears locked.... If you have keys, use the unlock function + the direction of what door you want to unlock.");
           return null;
->>>>>>> 11d38f06ecfa208f03785b72d4f741214d3e2adf
         }
 
       }
